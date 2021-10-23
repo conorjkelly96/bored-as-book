@@ -1,0 +1,27 @@
+{
+	"info": {
+		"_postman_id": "23b20ce5-5cd1-4867-9df8-22cdfb5f63f9",
+		"name": "Bored As Book API calls",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Music Events by City",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "/activity?type=music",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		}
+	]
+}
