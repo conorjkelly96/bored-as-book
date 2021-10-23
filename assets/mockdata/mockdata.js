@@ -23,5 +23,5 @@ response.price;
 response.key;
 
 // myActivites
-
+response.activity;
 // pass the object values as parameter to the ticket
