@@ -1,15 +1,6 @@
-/* * {
-  box-sizing: border-box;
-}
+/*
 
-html {
-  background-image: url(/bored-as-book/assets/images/andy-holmes-rCbdp8VCYhQ-unsplash.jpg);
-  background-color: #cccccc;
-}
 
-.navbar {
-  background-color: #485fc7;
-}
 
 .list-item {
   display: block;
@@ -36,10 +27,35 @@ html {
     width: 240px;
   }
 } */
+
+/* coolers */
+:root {
+  --flickr-pink: #f72585ff;
+  --byzantine: #b5179eff;
+  --purple: #7209b7ff;
+  --purple-2: #560badff;
+  --trypan-blue: #480ca8ff;
+  --trypan-blue-2: #3a0ca3ff;
+  --persian-blue: #3f37c9ff;
+  --ultramarine-blue: #4361eeff;
+  --dodger-blue: #4895efff;
+  --vivid-sky-blue: #4cc9f0ff;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   font-family: "Roboto", sans-serif;
+  color: white;
+}
+
+html {
+  background-image: url(/bored-as-book/assets/images/bg-image-bored-as-book.jpg);
+  background-color: #cccccc;
+}
+
+.navbar {
+  background-color: var(--purple-2);
 }
