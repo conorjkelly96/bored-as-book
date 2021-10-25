@@ -19,42 +19,73 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="./assets/styles/styles.css" />
   </head>
   <body>
-    <nav class="navbar is-transparent">
-      <div class="navbar-brand">
-        <h1>Bored As Book</h1>
-        <div
-          class="navbar-burger"
-          data-target="navbarExampleTransparentExample"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
+    <head>
+      <nav class="navbar is-transparent">
+        <div class="navbar-brand">
+          <h1>Bored As Book</h1>
+          <div
+            class="navbar-burger"
+            data-target="navbarExampleTransparentExample"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
-      </div>
 
-      <div id="navbarExampleTransparentExample" class="navbar-menu">
-        <div class="navbar-start">
-          <a class="navbar-item" href="https://bulma.io/"> Home </a>
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a
-              class="navbar-link"
-              href="https://bulma.io/documentation/overview/start/"
-            >
-              Docs
-            </a>
-            <div class="navbar-dropdown is-boxed">
+        <div id="navbarExampleTransparentExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item" href="https://bulma.io/"> Home </a>
+            <div class="navbar-item has-dropdown is-hoverable">
               <a
-                class="navbar-item"
+                class="navbar-link"
                 href="https://bulma.io/documentation/overview/start/"
               >
-                Overview
+                Docs
               </a>
+              <div class="navbar-dropdown is-boxed">
+                <a
+                  class="navbar-item"
+                  href="https://bulma.io/documentation/overview/start/"
+                >
+                  Overview
+                </a>
+              </div>
             </div>
           </div>
         </div>
+      </nav>
+    </head>
+
+    <main>
+      <div class="column is-3">
+        <!-- Column for search history -->
+        <div class="">
+          <h2>Where are you based?</h2>
+          <form class="form is-flex" id="search-form">
+            <input
+              id="city-input"
+              class="input is-primary"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button
+              type="submit"
+              id="search-button"
+              class="button is-info ml-4"
+            >
+              Search
+            </button>
+          </form>
+
+          <ul class="col-12 list-group" id="city-list"></ul>
+        </div>
       </div>
-    </nav>
+      <hr />
+    </main>
   </body>
 </html>
