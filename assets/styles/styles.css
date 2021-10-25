@@ -1,3 +1,8 @@
+html {
+  background-image: url(/bored-as-book/assets/images/andy-holmes-rCbdp8VCYhQ-unsplash.jpg);
+  background-color: #cccccc;
+}
+
 .navbar {
   border: 5px black solid;
 }
