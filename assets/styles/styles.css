@@ -1,10 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
   background-image: url(/bored-as-book/assets/images/andy-holmes-rCbdp8VCYhQ-unsplash.jpg);
   background-color: #cccccc;
 }
 
 .navbar {
-  border: 5px black solid;
+  background-color: #485fc7;
 }
 
 .list-item {
@@ -12,4 +16,23 @@ html {
   float: left;
   clear: left;
   margin: 5px;
+}
+
+.logo {
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+@media only screen and (max-width: 768px) {
+  #city-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .list-item {
+    width: 240px;
+  }
 }
