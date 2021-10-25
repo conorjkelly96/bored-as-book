@@ -1,33 +1,3 @@
-/*
-
-
-
-.list-item {
-  display: block;
-  float: left;
-  clear: left;
-  margin: 5px;
-}
-
-.logo {
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
-
-@media only screen and (max-width: 768px) {
-  #city-list {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-  }
-  .list-item {
-    width: 240px;
-  }
-} */
-
 /* coolers */
 :root {
   --flickr-pink: #f72585ff;
@@ -49,11 +19,12 @@
 body {
   font-family: "Roboto", sans-serif;
   color: white;
+  line-height: 1.4;
 }
 
 html {
   background-image: url(/bored-as-book/assets/images/bg-image-bored-as-book.jpg);
-  background-color: #cccccc;
+  /* background-color: #cccccc; */
 }
 
 .navbar {
