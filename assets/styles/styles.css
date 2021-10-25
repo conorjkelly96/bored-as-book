@@ -6,3 +6,10 @@ html {
 .navbar {
   border: 5px black solid;
 }
+
+.list-item {
+  display: block;
+  float: left;
+  clear: left;
+  margin: 5px;
+}
