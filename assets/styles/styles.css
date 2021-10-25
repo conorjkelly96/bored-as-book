@@ -20,6 +20,8 @@ body {
   font-family: "Roboto", sans-serif;
   color: white;
   line-height: 1.4;
+  margin: 0;
+  font-size: 60px;
 }
 
 html {
@@ -29,4 +31,11 @@ html {
 
 .navbar {
   background-color: var(--purple-2);
+  margin-bottom: 40px;
+}
+
+#title {
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
 }
