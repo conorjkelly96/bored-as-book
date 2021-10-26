@@ -4,7 +4,94 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- bulma css framework -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css"
+      integrity="sha512-IgmDkwzs96t4SrChW29No3NXBIBv8baW490zk5aXvhCD8vuZM3yUSkbyTBcXohkySecyzIrUwiF/qV0cuPcL3Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- google-fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!--custom-style css-->
+    <link rel="stylesheet" href="./assets/styles/styles.css" />
+    <title>Bored As Book | Home</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <nav class="navbar is-transparent">
+        <div class="navbar-brand">
+          <h1 class="logo">Bored As Book</h1>
+          <div class="navbar-burger" data-target="app-navbar">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+        <div id="app-navbar" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item" href="#">Home</a>
+            <a class="navbar-item" href="#">My Activities</a>
+            <a class="navbar-item" href="#">About Us</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="title-text tile is-ancestor">
+        <div class="tile is-parent">
+          <div class="tile is-child box">
+            <p class="title" id="title">
+              Let the universe decide your day.....
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button class="button is-large is-fullwidth is-info">Social</button>
+        <button class="button is-large is-fullwidth is-info">
+          Educational
+        </button>
+        <button class="button is-large is-fullwidth is-info">
+          Recreational
+        </button>
+        <button class="button is-large is-fullwidth is-info">Relaxation</button>
+        <button class="button is-large is-fullwidth is-info">Music</button>
+        <button class="button is-large is-fullwidth is-info">Random</button>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p><strong>Board As Book</strong> &copy; 2021</p>
+      </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- custom js -->
+    <script src="./assets/js/index.js"></script>
+  </body>
 </html>
