@@ -20,13 +20,10 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  /* line-height: 1.4;
-  font-size: 20px; */
 }
 
 html {
   background-image: url(/bored-as-book/assets/images/bg-image-bored-as-book.jpg);
-  /* background-color: #cccccc; */
 }
 
 main {
@@ -36,8 +33,8 @@ main {
 .logo {
   align-items: center;
   justify-content: center;
-  /* color: white; */
 }
+
 /* index.html */
 
 #tile {
@@ -47,9 +44,9 @@ main {
 }
 
 .buttons {
-  /* width: 600px; */
   margin: 20px auto;
 }
+
 /* myactivities.hmtl */
 
 .input {
@@ -72,7 +69,6 @@ main {
 
 .title-text {
   text-align: center;
-  /* width: 600px; */
   margin: auto !important;
   margin-top: 80px !important;
 }
