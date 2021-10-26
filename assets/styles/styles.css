@@ -39,11 +39,11 @@ main {
   padding: 20px;
 }
 
-.buttons {
+.buttons-container {
   margin: 20px auto;
 }
 
-.input {
+.form-input {
   width: 264px;
 }
 
@@ -67,6 +67,12 @@ main {
   margin-top: 80px !important;
 }
 
+.form-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 @media only screen and (max-width: 768px) {
   #search-list {
     display: flex;
@@ -83,5 +89,9 @@ main {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+  }
+
+  .form-container {
+    flex-direction: column;
   }
 }
