@@ -27,11 +27,8 @@ html {
   /* background-color: #cccccc; */
 }
 
-.tile-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+.input {
+  width: 264px;
 }
 
 .list-item {
@@ -41,6 +38,12 @@ html {
   margin: 5px;
 }
 
+.tile-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
 .logo {
   align-items: center;
   justify-content: center;
@@ -70,7 +73,7 @@ main {
 }
 
 @media only screen and (max-width: 768px) {
-  #city-list {
+  #search-list {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
