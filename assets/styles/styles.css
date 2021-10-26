@@ -18,9 +18,8 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  line-height: 1.4;
-  margin: 0;
-  font-size: 20px;
+  /* line-height: 1.4;
+  font-size: 20px; */
 }
 
 html {
@@ -28,19 +27,18 @@ html {
   /* background-color: #cccccc; */
 }
 
-.navbar {
+/* .navbar {
   background-color: var(--purple-2);
-  margin-bottom: 40px;
   color: white;
-}
+} */
 
-.navbar-burger {
+/* .navbar-burger {
   color: white;
-}
+} */
 
-.navbar-item {
+/* .navbar-item {
   color: white;
-}
+} */
 
 #tile {
   text-align: center;
@@ -49,7 +47,7 @@ html {
 }
 
 .buttons {
-  width: 600px;
+  /* width: 600px; */
   margin: 20px auto;
 }
 
@@ -59,7 +57,7 @@ main {
 
 .title-text {
   text-align: center;
-  width: 600px;
+  /* width: 600px; */
   margin: auto !important;
   margin-top: 80px !important;
 }
