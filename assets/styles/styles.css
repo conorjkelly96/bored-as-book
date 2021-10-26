@@ -42,4 +42,10 @@ html {
   .list-item {
     width: 240px;
   }
+  .tile-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 }
