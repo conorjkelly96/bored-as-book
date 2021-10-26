@@ -18,10 +18,9 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  color: white;
   line-height: 1.4;
   margin: 0;
-  font-size: 60px;
+  font-size: 20px;
 }
 
 html {
@@ -34,8 +33,32 @@ html {
   margin-bottom: 40px;
 }
 
-#title {
+.navbar-burger {
+  color: white;
+}
+
+.navbar-item {
+  color: white;
+}
+
+#tile {
   text-align: center;
   margin: 20px;
   padding: 20px;
+}
+
+.buttons {
+  width: 600px;
+  margin: 20px auto;
+}
+
+main {
+  height: 75vh;
+}
+
+.title-text {
+  text-align: center;
+  width: 600px;
+  margin: auto !important;
+  margin-top: 80px !important;
 }

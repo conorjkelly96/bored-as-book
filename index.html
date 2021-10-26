@@ -35,6 +35,35 @@
     <header>
       <nav class="navbar is-transparent">
         <div class="navbar-brand">
+          <a class="navbar-item" href="https://bulma.io">
+            <img
+              src="https://bulma.io/images/bulma-logo.png"
+              alt="Bulma: a modern CSS framework based on Flexbox"
+              width="112"
+              height="28"
+            />
+          </a>
+          <div
+            class="navbar-burger"
+            data-target="navbarExampleTransparentExample"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+        <div id="navbarExampleTransparentExample" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item" href="https://bulma.io/"> Home </a>
+            <a class="navbar-item" href="https://bulma.io/"> About </a>
+            <a class="navbar-item" href="https://bulma.io/"> Contact Us </a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- <nav class="navbar is-transparent">
+        <div class="navbar-brand">
           <h1 class="logo">Bored As Book</h1>
           <div
             class="navbar-burger"
@@ -45,10 +74,20 @@
             <span></span>
           </div>
         </div>
-      </nav>
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </nav> -->
     </header>
     <main>
-      <div class="tile is-ancestor">
+      <div class="title-text tile is-ancestor">
         <div class="tile is-parent">
           <div class="tile is-child box">
             <p class="title" id="title">
@@ -58,6 +97,15 @@
         </div>
       </div>
 
+      <div class="buttons">
+        <button class="button is-large is-fullwidth">Random</button>
+        <button class="button is-large is-fullwidth">Random</button>
+        <button class="button is-large is-fullwidth">Random</button>
+        <button class="button is-large is-fullwidth">Random</button>
+        <button class="button is-large is-fullwidth">Random</button>
+      </div>
+
+      <!-- 
       <div class="tile is-ancestor">
         <div class="tile is-parent">
           <div class="tile is-child box">
@@ -96,18 +144,11 @@
             <p class="title"></p>
           </div>
         </div>
-      </div>
+      </div> -->
     </main>
-
     <footer class="footer">
       <div class="content has-text-centered">
-        <p>
-          <strong>Bulma</strong> by
-          <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is
-          licensed
-          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The
-          website content is licensed <a href="">CC BY NC SA 4.0</a>.
-        </p>
+        <p><strong>Board As Book</strong> &copy; 2021</p>
       </div>
     </footer>
 
