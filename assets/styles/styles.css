@@ -1,3 +1,5 @@
+/* These are core elements of the site design */
+
 /* coolers */
 :root {
   --flickr-pink: #f72585ff;
@@ -27,6 +29,29 @@ html {
   /* background-color: #cccccc; */
 }
 
+main {
+  min-height: 75vh;
+}
+
+.logo {
+  align-items: center;
+  justify-content: center;
+  /* color: white; */
+}
+/* index.html */
+
+#tile {
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+}
+
+.buttons {
+  /* width: 600px; */
+  margin: 20px auto;
+}
+/* myactivities.hmtl */
+
 .input {
   width: 264px;
 }
@@ -43,26 +68,6 @@ html {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-}
-.logo {
-  align-items: center;
-  justify-content: center;
-  /* color: white; */
-}
-
-#tile {
-  text-align: center;
-  margin: 20px;
-  padding: 20px;
-}
-
-.buttons {
-  /* width: 600px; */
-  margin: 20px auto;
-}
-
-main {
-  min-height: 75vh;
 }
 
 .title-text {
