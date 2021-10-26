@@ -1,5 +1,3 @@
-/* These are core elements of the site design */
-
 /* coolers */
 :root {
   --flickr-pink: #f72585ff;
@@ -35,8 +33,6 @@ main {
   justify-content: center;
 }
 
-/* index.html */
-
 #tile {
   text-align: center;
   margin: 20px;
@@ -46,8 +42,6 @@ main {
 .buttons {
   margin: 20px auto;
 }
-
-/* myactivities.hmtl */
 
 .input {
   width: 264px;
