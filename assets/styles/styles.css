@@ -11,6 +11,13 @@ html {
   background-color: #485fc7;
 }
 
+.tile-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .list-item {
   display: block;
   float: left;
