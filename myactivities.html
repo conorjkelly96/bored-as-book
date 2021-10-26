@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="./assets/styles/styles.css" />
   </head>
   <body>
-    <head>
+    <header>
       <nav class="navbar is-transparent">
         <div class="navbar-brand">
           <h1 class="logo has-text-weight-semibold">Bored As Book</h1>
@@ -36,16 +36,17 @@
               About Us</a
             >
           </div>
-          <div class="navbar-burger" data-target="">
+          <div class="navbar-burger">
             <span></span>
             <span></span>
             <span></span>
           </div>
         </div>
       </nav>
-    </head>
+    </header>
 
     <main>
+      <!-- Search Input Section -->
       <div class="column is-3">
         <!-- Column for search history -->
         <div class="">
@@ -54,7 +55,7 @@
           </h2>
           <form class="form is-flex" id="search-form">
             <input
-              id="city-input"
+              id="search-input"
               class="input is-primary"
               type="search"
               placeholder="Where's your adventure today?"
@@ -68,14 +69,17 @@
               Search
             </button>
           </form>
-
-          <ul class="col-12 list-group" id="city-list"></ul>
         </div>
       </div>
+
       <hr />
 
+      <!-- Search List for user choices -->
       <div>
-        <ul class="column is-flex-direction-column is-vertical" id="city-list">
+        <ul
+          class="column is-flex-direction-column is-vertical"
+          id="search-list"
+        >
           <li class="list-item button is-link">Marathon</li>
           <li class="list-item button is-link">Picnic with Friends</li>
           <li class="list-item button is-link">Cinema Night</li>
@@ -83,8 +87,9 @@
         </ul>
       </div>
 
+      <!-- Search Tiles after user executes a search query -->
       <div class="tile-container">
-        <div class="tile is-parent is-vertical is-6">
+        <div class="tile is-parent is-vertical is-10">
           <div class="tile is-child box">
             <p class="title">Search Result</p>
             <p>
