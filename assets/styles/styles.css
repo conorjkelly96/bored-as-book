@@ -76,6 +76,15 @@ main {
   padding: 0px;
 }
 
+.card-content {
+  text-align: center;
+}
+
+/* overwriting activity text  */
+.activity-text {
+  font-size: 20px;
+}
+
 @media only screen and (max-width: 768px) {
   #search-list {
     display: flex;
