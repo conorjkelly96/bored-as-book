@@ -42,22 +42,12 @@
       </nav>
     </header>
 
-    <!-- <div class="columns">
-      <div class="column">1</div>
-      <div class="column">2</div>
-      <div class="column">3</div>
-      <div class="column">4</div>
-    </div> -->
-
     <main>
       <!-- Search Input Section -->
-      <div class="column is-12">
+      <div class="column is-12 input-parent-container">
         <!-- Column for search history -->
         <div class="input-container">
-          <h2 class="has-text-white has-text-weight-semibold">
-            Search for a city below:
-          </h2>
-          <form class="form-container" id="search-form">
+          <!-- <form class="form-container" id="search-form">
             <input
               id="search-input"
               class="input is-primary form-input"
@@ -72,7 +62,31 @@
             >
               Search
             </button>
-          </form>
+          </form> -->
+
+          <div class="field column is-one-third">
+            <label class="label has-text-white">Search For A City Below:</label>
+            <div class="control has-icons-left">
+              <input
+                size="5"
+                class="input"
+                type="text"
+                placeholder="Where next?"
+              />
+              <span class="icon is-small is-left">
+                <i class="fas fa-globe"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="field is-grouped">
+            <div class="control">
+              <button type="submit" class="button is-link">Search</button>
+            </div>
+            <div class="control">
+              <button class="button is-link is-danger">Cancel</button>
+            </div>
+          </div>
         </div>
       </div>
 
