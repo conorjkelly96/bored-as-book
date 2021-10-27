@@ -43,6 +43,10 @@ main {
   margin: 20px auto;
 }
 
+.category-btn {
+  margin-top: 10px;
+}
+
 .form-input {
   width: 264px;
 }
