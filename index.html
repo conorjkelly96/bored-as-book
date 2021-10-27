@@ -55,7 +55,7 @@
     </header>
 
     <!-- main container - this will contain all cards on the landing page -->
-    <main class="container">
+    <main class="container" id="main-container">
       <div class="title-text tile is-ancestor">
         <div class="tile is-parent">
           <div class="tile is-child box">
@@ -67,46 +67,51 @@
       </div>
 
       <!-- User Input here -->
-      <!-- <div class="buttons-container">
-        <button class="category-btn button is-large is-fullwidth is-link">
-          Social
-        </button>
-        <button class="category-btn button is-large is-fullwidth is-link">
-          Educational
-        </button>
-        <button class="category-btn button is-large is-fullwidth is-link">
-          Recreational
-        </button>
-        <button class="category-btn button is-large is-fullwidth is-link">
-          Relaxation
-        </button>
-        <button class="category-btn button is-large is-fullwidth is-link">
-          Music
-        </button>
-        <button class="category-btn button is-large is-fullwidth is-link">
-          Random
-        </button>
-      </div> -->
 
-      <div class="card ml-3 mr-3">
-        <div class="card-content">
-          <p id="activity-name" class="activity-text">
-            Go To A Local Thrift Shop
-          </p>
-          <p id="activity-type" class="activity-text">Recreational</p>
-          <p id="activity-cost" class="activity-text">Cost Index: 1/10</p>
-        </div>
-        <div class="card-footer">
-          <button id="no-btn" class="card-footer-item button is-danger">
-            No
+      <div id="card-container"></div>
+
+      <div class="choices-container" id="choices-container">
+        <div class="buttons-container ml-3 mr-3">
+          <button
+            data-category="social"
+            class="category-btn button is-large is-fullwidth is-link"
+          >
+            Social
           </button>
-          <button id="yes-btn" class="card-footer-item button is-success">
-            Yes
+          <button
+            data-category="education"
+            class="category-btn button is-large is-fullwidth is-link"
+          >
+            Educational
+          </button>
+          <button
+            data-category="recreational"
+            class="category-btn button is-large is-fullwidth is-link"
+          >
+            Recreational
+          </button>
+          <button
+            data-category="relaxation"
+            class="category-btn button is-large is-fullwidth is-link"
+          >
+            Relaxation
+          </button>
+          <button
+            data-category="music"
+            class="category-btn button is-large is-fullwidth is-link"
+          >
+            Music
+          </button>
+          <button
+            data-category="random"
+            class="category-btn button is-large is-fullwidth is-link"
+          >
+            Random
           </button>
         </div>
       </div>
 
-      <div
+      <!-- <div
         class="return-btn-container ml-3 mr-3 mt-6 column"
         id="return-btn-container"
       >
@@ -116,7 +121,7 @@
         >
           Return to Main
         </button>
-      </div>
+      </div> -->
     </main>
 
     <footer class="footer">
