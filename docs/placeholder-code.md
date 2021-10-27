@@ -14,3 +14,32 @@ To be used when a user has added an activity to their Activity List.
   </p>
 </div>
 ```
+
+Button container for if the user is able to select multiple categories.
+
+````html
+<div class="choices-container" id="choices-container">
+  <div class="buttons-container">
+    <button class="category-btn button is-large is-fullwidth is-link">
+      Social
+    </button>
+    <button class="category-btn button is-large is-fullwidth is-link">
+      Educational
+    </button>
+    <button
+      class="category-btn button is-large is-fullwidth is-link is-success"
+    >
+      Recreational
+    </button>
+    <button class="category-btn button is-large is-fullwidth is-link">
+      Relaxation
+    </button>
+    <button
+      class="category-btn button is-large is-fullwidth is-link is-success"
+    >
+      Music
+    </button>
+  </div>
+</div>
+```
+````
