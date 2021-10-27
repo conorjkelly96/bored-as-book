@@ -67,6 +67,11 @@ main {
   margin-top: 80px !important;
 }
 
+/* Overwriting BULMA padding on input div */
+.input-div {
+  padding: 0px;
+}
+
 @media only screen and (max-width: 768px) {
   #search-list {
     display: flex;
