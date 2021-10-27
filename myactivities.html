@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Activities</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css"
+      integrity="sha512-IgmDkwzs96t4SrChW29No3NXBIBv8baW490zk5aXvhCD8vuZM3yUSkbyTBcXohkySecyzIrUwiF/qV0cuPcL3Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./assets/styles/styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar is-transparent">
+        <div class="navbar-brand">
+          <h1 class="logo">Bored As Book</h1>
+          <div class="navbar-burger" data-target="app-navbar">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+        <div id="app-navbar" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item" href="./index.html">Home</a>
+            <a class="navbar-item" href="">About Us</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Search Input Section -->
+      <div class="column is-12 input-parent-container">
+        <!-- Column for search history -->
+        <div class="input-container">
+          <div class="field column is-one-third input-div">
+            <label class="label has-text-white">Search For A City Below:</label>
+            <div class="control has-icons-left">
+              <input
+                size="5"
+                class="input"
+                type="text"
+                placeholder="Where next?"
+              />
+              <span class="icon is-small is-left">
+                <i class="fas fa-globe"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="field is-grouped">
+            <div class="control">
+              <button type="submit" class="button is-link">Search</button>
+            </div>
+            <div class="control">
+              <button class="button is-link is-danger">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <!-- Search List for user choices -->
+      <div>
+        <ul
+          class="column is-flex-direction-column is-vertical"
+          id="search-list"
+        >
+          <li class="list-item button is-link">Marathon</li>
+          <li class="list-item button is-link">Picnic with Friends</li>
+          <li class="list-item button is-link">Cinema Night</li>
+          <li class="list-item button is-link">Go for food</li>
+        </ul>
+      </div>
+
+      <!-- Search Tiles after user executes a search query -->
+      <div class="tile-container">
+        <div class="tile is-parent is-vertical is-10">
+          <div class="tile is-child box">
+            <p class="title">Search Result</p>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero
+              facilis aliquid similique sint, reiciendis cumque inventore rerum
+              unde eligendi iste est a optio. Velit magnam voluptatem eius quis
+              sit molestias?
+            </p>
+          </div>
+
+          <div class="tile is-child box">
+            <p class="title">Search Result</p>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero
+              facilis aliquid similique sint, reiciendis cumque inventore rerum
+              unde eligendi iste est a optio. Velit magnam voluptatem eius quis
+              sit molestias?
+            </p>
+          </div>
+
+          <div class="tile is-child box">
+            <p class="title">Search Result</p>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero
+              facilis aliquid similique sint, reiciendis cumque inventore rerum
+              unde eligendi iste est a optio. Velit magnam voluptatem eius quis
+              sit molestias?
+            </p>
+          </div>
+
+          <div class="tile is-child box">
+            <p class="title">Search Result</p>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero
+              facilis aliquid similique sint, reiciendis cumque inventore rerum
+              unde eligendi iste est a optio. Velit magnam voluptatem eius quis
+              sit molestias?
+            </p>
+          </div>
+
+          <div class="tile is-child box">
+            <p class="title">Search Result</p>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero
+              facilis aliquid similique sint, reiciendis cumque inventore rerum
+              unde eligendi iste est a optio. Velit magnam voluptatem eius quis
+              sit molestias?
+            </p>
+          </div>
+
+          <div class="tile is-child box">
+            <p class="title">Search Result</p>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero
+              facilis aliquid similique sint, reiciendis cumque inventore rerum
+              unde eligendi iste est a optio. Velit magnam voluptatem eius quis
+              sit molestias?
+            </p>
+          </div>
+
+          <div class="tile is-child box">
+            <p class="title">Search Result</p>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero
+              facilis aliquid similique sint, reiciendis cumque inventore rerum
+              unde eligendi iste est a optio. Velit magnam voluptatem eius quis
+              sit molestias?
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer is-transparent">
+      <div class="content has-text-centered">
+        <p>
+          <strong>Bored As Book</strong> by
+          <!-- Need to add link to aboutus.html -->
+          <a href="">the following developers at the University of Birmingham</a
+          >.
+        </p>
+      </div>
+    </footer>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="./assets/js/index.js"></script>
+  </body>
+</html>

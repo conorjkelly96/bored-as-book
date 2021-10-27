@@ -18,27 +18,20 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  /* line-height: 1.4;
-  font-size: 20px; */
 }
 
 html {
   background-image: url(/bored-as-book/assets/images/bg-image-bored-as-book.jpg);
-  /* background-color: #cccccc; */
 }
 
-/* .navbar {
-  background-color: var(--purple-2);
-  color: white;
-} */
+main {
+  min-height: 75vh;
+}
 
-/* .navbar-burger {
-  color: white;
-} */
-
-/* .navbar-item {
-  color: white;
-} */
+.logo {
+  align-items: center;
+  justify-content: center;
+}
 
 #tile {
   text-align: center;
@@ -46,18 +39,58 @@ html {
   padding: 20px;
 }
 
-.buttons {
-  /* width: 600px; */
+.buttons-container {
   margin: 20px auto;
 }
 
-main {
-  height: 75vh;
+.form-input {
+  width: 264px;
+}
+
+.list-item {
+  display: block;
+  float: left;
+  clear: left;
+  margin: 5px;
+}
+
+.tile-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .title-text {
   text-align: center;
-  /* width: 600px; */
   margin: auto !important;
   margin-top: 80px !important;
+}
+
+/* Overwriting BULMA padding on input div */
+.input-div {
+  padding: 0px;
+}
+
+@media only screen and (max-width: 768px) {
+  #search-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .list-item {
+    width: 240px;
+  }
+  .tile-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .form-container {
+    flex-direction: column;
+  }
 }
