@@ -13,16 +13,22 @@ const onReady = function () {
 };
 
 const resetChoicesCSS = function (buttons) {
-  const removeSuccessClass = function (button) {
+  const removeSuccessClass = function (buttonOption) {
+    const button = $(buttonOption);
     if (button.hasClass("is-success")) {
       button.removeClass("is-success");
     }
   };
-  console.log(buttons);
   buttons.forEach(removeSuccessClass);
 };
 
-const handleSelectedChoice = function (event) {
+// function to make the API call
+const getApiCall = async function (url) {
+  const data = await fetch(url);
+  return data.json();
+};
+
+const handleSelectedChoice = async function (event) {
   const target = $(event.target);
   const currentTarget = $(event.currentTarget);
 
@@ -31,12 +37,15 @@ const handleSelectedChoice = function (event) {
     const categorySelected = target.data("category");
     // go through buttons to find 'is-success' class and remove
     const choicesButtons = currentTarget.find("button");
-    resetChoicesCSS(choicesButtons);
+    // add spread operator to the choices button array to loop over the buttons
+    resetChoicesCSS([...choicesButtons]);
     target.addClass("is-success");
     const url =
       categorySelected === "random"
         ? `${baseURL}/api/activity`
         : `${baseURL}/api/activity?type=${categorySelected}`;
+    const data = await getApiCall(url);
+    console.log(data);
   }
 };
 
