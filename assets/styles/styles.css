@@ -43,6 +43,10 @@ main {
   margin: 20px auto;
 }
 
+.category-btn {
+  margin-top: 10px;
+}
+
 .form-input {
   width: 264px;
 }
@@ -70,6 +74,19 @@ main {
 /* Overwriting BULMA padding on input div */
 .input-div {
   padding: 0px;
+}
+
+.card-content {
+  text-align: center;
+}
+
+/* overwriting activity text  */
+.activity-text {
+  font-size: 20px;
+}
+
+.activity-notification {
+  font-style: italic;
 }
 
 @media only screen and (max-width: 768px) {

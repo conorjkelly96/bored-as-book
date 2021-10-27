@@ -29,9 +29,10 @@
     />
     <!--custom-style css-->
     <link rel="stylesheet" href="./assets/styles/styles.css" />
-    <title>Bored As Book | Home</title>
+    <title>Bored As Book! | Home</title>
   </head>
   <body>
+    <!-- header containing Navbar section -->
     <header>
       <nav class="navbar is-transparent">
         <div class="navbar-brand">
@@ -53,36 +54,78 @@
       </nav>
     </header>
 
+    <!-- main container - this will contain all cards on the landing page -->
     <main class="container">
       <div class="title-text tile is-ancestor">
         <div class="tile is-parent">
           <div class="tile is-child box">
             <p class="title" id="title">
-              Let the universe decide your day.....
+              Let The Universe Decide Your Day.....
             </p>
           </div>
         </div>
       </div>
 
-      <div class="buttons-container">
-        <button class="button is-large is-fullwidth is-info">Social</button>
-        <button class="button is-large is-fullwidth is-info">
+      <!-- User Input here -->
+      <!-- <div class="buttons-container">
+        <button class="category-btn button is-large is-fullwidth is-link">
+          Social
+        </button>
+        <button class="category-btn button is-large is-fullwidth is-link">
           Educational
         </button>
-        <button class="button is-large is-fullwidth is-info">
+        <button class="category-btn button is-large is-fullwidth is-link">
           Recreational
         </button>
-        <button class="button is-large is-fullwidth is-info">Relaxation</button>
-        <button class="button is-large is-fullwidth is-info">Music</button>
-        <button class="button is-large is-fullwidth is-info">Random</button>
+        <button class="category-btn button is-large is-fullwidth is-link">
+          Relaxation
+        </button>
+        <button class="category-btn button is-large is-fullwidth is-link">
+          Music
+        </button>
+        <button class="category-btn button is-large is-fullwidth is-link">
+          Random
+        </button>
+      </div> -->
+
+      <div class="card ml-3 mr-3">
+        <div class="card-content">
+          <p id="activity-name" class="activity-text">
+            Go To A Local Thrift Shop
+          </p>
+          <p id="activity-type" class="activity-text">Recreational</p>
+          <p id="activity-cost" class="activity-text">Cost Index: 1/10</p>
+        </div>
+        <div class="card-footer">
+          <button id="no-btn" class="card-footer-item button is-danger">
+            No
+          </button>
+          <button id="yes-btn" class="card-footer-item button is-success">
+            Yes
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="return-btn-container ml-3 mr-3 mt-6 column"
+        id="return-btn-container"
+      >
+        <button
+          class="category-btn button is-large is-fullwidth is-link"
+          id="return-btn"
+        >
+          Return to Main
+        </button>
       </div>
     </main>
 
     <footer class="footer">
       <div class="content has-text-centered">
-        <p><strong>Board As Book</strong> &copy; 2021</p>
+        <p><strong>Bored As Book!</strong> &copy; 2021</p>
       </div>
     </footer>
+
+    <!-- modal -->
 
     <!-- jQuery -->
     <script
