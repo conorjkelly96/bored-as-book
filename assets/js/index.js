@@ -37,8 +37,8 @@ const renderActivityCard = async function (categorySelected) {
     categorySelected === "random"
       ? `${baseURL}/api/activity`
       : `${baseURL}/api/activity?type=${categorySelected}`;
-  const data = await getApiCall(url);
-  constructActivityCard(data);
+  choiceData = await getApiCall(url);
+  constructActivityCard(choiceData);
 };
 
 const handleSelectedChoice = async function (event) {
@@ -60,6 +60,26 @@ const handleSelectedChoice = async function (event) {
 
 const handleUserChoices = async function (event) {
   const target = $(event.target);
+
+  if (target.data("choice") === "yes") {
+    // get data from local storage
+    const myActivities = JSON.parse(localStorage.getItem("myActivities")) ?? {};
+
+    // get the category
+    const category = target.data("category");
+
+    // get the category list
+    const activities = myActivities[category] ?? [];
+
+    // push the choice data in the list
+    activities.push(choiceData);
+
+    // set the list back in object
+    myActivities[category] = activities;
+
+    // store choice data in local storage
+    localStorage.setItem("myActivities", JSON.stringify(myActivities));
+  }
 
   if (target.is("button")) {
     // render the selected activity card
@@ -101,6 +121,13 @@ const constructActivityCard = function (activity) {
 };
 
 const onReady = function () {
+  //get data from local storage
+  const data = localStorage.getItem(choiceDataKey);
+
+  if (data) {
+    constructActivityCard(JSON.parse(data));
+  }
+
   navBurger.on("click", toggleNavBar);
   choicesContainer.on("click", handleSelectedChoice);
   cardContainer.on("click", handleUserChoices);
