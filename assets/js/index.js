@@ -59,7 +59,7 @@ const handleUserChoices = async function (event) {
 
   if (target.is("button")) {
     console.log("button click");
-    // const userChoice = target.data("choice");
+    // CK 28/10: see ticket 24 in Project Board
     const url = `${baseURL}/api/activity?type=${currentCategory}`;
     const data = await getApiCall(url);
     constructActivityCard(data);
