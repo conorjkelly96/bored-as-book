@@ -64,6 +64,7 @@ const handleUserChoices = async function (event) {
         ? `${baseURL}/api/activity`
         : `${baseURL}/api/activity?type=${categorySelected}`;
     const data = await getApiCall(url);
+    console.log(url);
     constructActivityCard(data);
   }
 };
