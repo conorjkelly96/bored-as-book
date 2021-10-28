@@ -5,6 +5,11 @@ let currentCategory;
 // if making API call this sets to TRUE, else FALSE
 let currentStatus;
 
+// to store api data
+let choiceData;
+// local storage key name
+const choiceDataKey = "choiceData";
+
 const toggleNavBar = function () {
   // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
   $(".navbar-burger").toggleClass("is-active");
@@ -12,6 +17,13 @@ const toggleNavBar = function () {
 };
 
 const onReady = function () {
+  // get data from local storage
+  const data = localStorage.getItem(choiceDataKey);
+
+  if (data) {
+    constructActivityCard(JSON.parse(data));
+  }
+
   // Check for click events on the navbar burger icon
   $(".navbar-burger").click(toggleNavBar);
 };
@@ -49,21 +61,25 @@ const handleSelectedChoice = async function (event) {
       categorySelected === "random"
         ? `${baseURL}/api/activity`
         : `${baseURL}/api/activity?type=${categorySelected}`;
-    const data = await getApiCall(url);
-    constructActivityCard(data);
+    choiceData = await getApiCall(url);
+    constructActivityCard(choiceData);
   }
 };
 
 const handleUserChoices = async function (event) {
   const target = $(event.target);
-
-  if (target.is("button")) {
-    console.log("button click");
-    // CK 28/10: see ticket 24 in Project Board
-    const url = `${baseURL}/api/activity?type=${currentCategory}`;
-    const data = await getApiCall(url);
-    constructActivityCard(data);
+  if (target.data("choice") === "yes") {
+    // store choice data in local storage
+    localStorage.setItem(choiceDataKey, JSON.stringify(choiceData));
   }
+
+  // if (target.is("button")) {
+  //   console.log("button click");
+  //   // CK 28/10: see ticket 24 in Project Board
+  //   const url = `${baseURL}/api/activity?type=${currentCategory}`;
+  //   const data = await getApiCall(url);
+  //   constructActivityCard(data);
+  // }
 };
 
 // Add Dollar Sign to activity.price
