@@ -56,12 +56,13 @@ const handleSelectedChoice = async function (event) {
 
 const handleUserChoices = async function (event) {
   const target = $(event.target);
-
   if (target.is("button")) {
-    console.log("button click");
+    const categorySelected = target.data("category");
     // CK 28/10: see ticket 24 in Project Board
-    // Ck on new branch
-    const url = `${baseURL}/api/activity?type=${currentCategory}`;
+    const url =
+      categorySelected === "random"
+        ? `${baseURL}/api/activity`
+        : `${baseURL}/api/activity?type=${categorySelected}`;
     const data = await getApiCall(url);
     constructActivityCard(data);
   }
