@@ -5,6 +5,11 @@ const baseURL = "https://www.boredapi.com";
 // if making API call this sets to TRUE, else FALSE
 let currentStatus;
 
+// to store api data
+let choiceData;
+// local storage key name
+const choiceDataKey = "choiceData";
+
 const toggleNavBar = function () {
   // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
   navBurger.toggleClass("is-active");
