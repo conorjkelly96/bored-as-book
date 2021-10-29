@@ -18,6 +18,8 @@ const BASE_URL =
 
 const q = "covid%2019";
 
+let i;
+
 const mockSearchResults = {
   id: "5496466817154867838",
   title: "Learn C and C++ Programming - Cprogramming.com",
@@ -68,18 +70,23 @@ const getChoicesFromLocalStorage = function () {
   const choices = [JSON.parse(localStorage.getItem("myActivities"))];
 };
 
-getChoicesFromLocalStorage();
-
 //rendering choices from local storage
 const constructUserChoices = function (data) {
   const choices = [JSON.parse(localStorage.getItem("myActivities"))];
-  console.log(choices.length);
   //
   const renderUserChoices = function (choice) {
     const choicesParent = $("#user-choices-list");
-    const userChoiceOption = `<li class="list-item button is-link">${choice}</li>`;
+    const userChoiceOption = `<li class="list-item button is-link">${choice[4]}</li>`;
     choicesParent.append(userChoiceOption);
   };
+  console.log(choices);
+
+  // for (let i = 0; i < choices.length; i++) {
+  //   console.log(i);
+  //   const choicesParent = $("#user-choices-list");
+  //   const userChoiceOption = `<li class="list-item button is-link">${i}</li>`;
+  //   choicesParent.append(userChoiceOption);
+  // }
 
   choices.forEach(renderUserChoices);
 };
@@ -93,7 +100,7 @@ const constructSearchResults = function (results) {
   ${results.description}
   </p>
   <a>${results.url}</a>
-</div>`;
+  </div>`;
   //searchParent.empty();
   searchParent.append(searchResults);
 };
@@ -101,6 +108,7 @@ const constructSearchResults = function (results) {
 const onReady = function () {
   constructSearchResults(mockSearchResults);
   constructUserChoices(userChoices);
+  getChoicesFromLocalStorage();
   // getApiCall();
 };
 
