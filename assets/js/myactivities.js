@@ -72,23 +72,17 @@ const getChoicesFromLocalStorage = function () {
 
 //rendering choices from local storage
 const constructUserChoices = function (data) {
-  const choices = [JSON.parse(localStorage.getItem("myActivities"))];
-  //
+  const datafromLS = [...JSON.parse(localStorage.getItem("myActivities"))];
+
+  // for each activity, create a list item and append to the list item parent
   const renderUserChoices = function (choice) {
     const choicesParent = $("#user-choices-list");
-    const userChoiceOption = `<li class="list-item button is-link">${choice[4]}</li>`;
+    const userChoiceOption = `<li class="list-item button is-link">${choice}</li>`;
     choicesParent.append(userChoiceOption);
   };
-  console.log(choices);
+  console.log(datafromLS);
 
-  // for (let i = 0; i < choices.length; i++) {
-  //   console.log(i);
-  //   const choicesParent = $("#user-choices-list");
-  //   const userChoiceOption = `<li class="list-item button is-link">${i}</li>`;
-  //   choicesParent.append(userChoiceOption);
-  // }
-
-  choices.forEach(renderUserChoices);
+  datafromLS.forEach(renderUserChoices);
 };
 
 const constructSearchResults = function (results) {
