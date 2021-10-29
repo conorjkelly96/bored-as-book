@@ -19,6 +19,8 @@
 body {
   font-family: "Roboto", sans-serif;
   height: 100vh;
+  padding-left: 8rem;
+  padding-right: 8rem;
 }
 
 html {
@@ -27,6 +29,8 @@ html {
 
 main {
   min-height: 80vh;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
 }
 
 .logo {
@@ -127,6 +131,7 @@ main {
   background: #4cc9f0ff;
   width: 25%;
   height: 280px;
+  padding-left: 2rem;
 }
 .middlebox-music {
   float: left;
@@ -139,6 +144,7 @@ main {
   background: #4cc9f0ff;
   width: 25%;
   height: 280px;
+  padding-right: 2rem;
 }
 
 h2 {
