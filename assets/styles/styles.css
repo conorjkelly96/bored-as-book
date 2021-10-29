@@ -90,6 +90,81 @@ main {
   font-style: italic;
 }
 
+.card-music {
+  /* A flex-basis of 200px sets the starting width */
+  /* A flex-grow value of 1 allows the elements to evenly grow to fill the remaining space */
+  flex: 1 0 200px;
+  padding: 20px;
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.card-social {
+  /* A flex-basis of 200px sets the starting width */
+  /* A flex-grow value of 1 allows the elements to evenly grow to fill the remaining space */
+  flex: 1 0 200px;
+  padding: 20px;
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.card-music header {
+  padding: 10px;
+  background: #13293d;
+  color: #fff;
+}
+
+.card-social header {
+  padding: 10px;
+  background: #13293d;
+  color: #fff;
+}
+
+.leftbox-music {
+  float: left;
+  background: #4cc9f0ff;
+  width: 25%;
+  height: 280px;
+}
+.middlebox-music {
+  float: left;
+  background: #4361eeff;
+  width: 50%;
+  height: 280px;
+}
+.rightbox-music {
+  float: right;
+  background: #4cc9f0ff;
+  width: 25%;
+  height: 280px;
+}
+
+h2 {
+  color: green;
+  text-align: center;
+}
+
+.leftbox-social {
+  float: left;
+  background: #4cc9f0ff;
+  width: 25%;
+  height: 280px;
+}
+.middlebox-social {
+  float: left;
+  background: #4361eeff;
+  width: 50%;
+  height: 280px;
+}
+.rightbox-social {
+  float: right;
+  background: #4cc9f0ff;
+  width: 25%;
+  height: 280px;
+}
+
 @media only screen and (max-width: 768px) {
   #search-list {
     display: flex;
