@@ -68,15 +68,17 @@ const getChoicesFromLocalStorage = function () {
 
 //rendering choices from local storage
 const constructUserChoices = function (data) {
-  const datafromLS = [...JSON.parse(localStorage.getItem("myActivities"))];
+  // get the my activity object and get all the values in their array and flatten the array to make it one
+  const datafromLS = [
+    ...Object.values(JSON.parse(localStorage.getItem("myActivities"))),
+  ].flat();
 
   // for each activity, create a list item and append to the list item parent
   const renderUserChoices = function (choice) {
     const choicesParent = $("#user-choices-list");
-    const userChoiceOption = `<li class="list-item button is-link">${choice}</li>`;
+    const userChoiceOption = `<li class="list-item button is-link">${choice.activity}</li>`;
     choicesParent.append(userChoiceOption);
   };
-  console.log(datafromLS);
 
   datafromLS.forEach(renderUserChoices);
 };
