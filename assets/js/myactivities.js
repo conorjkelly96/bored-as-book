@@ -33,6 +33,7 @@ const mockSearchResults = {
   datePublished: "0001-01-01T00:00:00",
 };
 
+// SEE WEEK 6 ACTIVITY 5 FOR AJAX API CALLS
 // Conor 29/10: Why does this API require ajax json method to evoke a response?
 // please see documentation: https://api.jquery.com/jquery.ajax/
 const settings = {
@@ -89,6 +90,7 @@ const constructSearchResults = function (results) {
 const onReady = function () {
   constructSearchResults(mockSearchResults);
   constructUserChoices(userChoices);
+  const data = localStorage.getItem(choiceDataKey);
   getApiCall();
 };
 
