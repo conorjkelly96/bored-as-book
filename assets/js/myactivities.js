@@ -53,10 +53,10 @@ const settings = {
   },
 };
 
-// const apiCall = $.ajax(settings).done(function (response) {
-//   const apiCall = response;
-//   console.log(apiCall);
-// });
+const apiCall = $.ajax(settings).done(function (response) {
+  const apiCall = response;
+  console.log(apiCall);
+});
 
 // const getApiCall = async function (url) {
 //   const data = $.ajax(settings).done(function (response) {
