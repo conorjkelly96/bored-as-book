@@ -1,4 +1,6 @@
-const userchoices = [
+console.log("linked");
+
+const userChoices = [
   "Play football",
   "Cook an Italian meal",
   "Go to the cinema",
@@ -22,13 +24,14 @@ const mockSearchResults = [
 ];
 
 //rendering choices from local storage
-const constructUserChoices = function () {
+const constructUserChoices = function (choices) {
   const choicesParent = $("#user-choices-list");
-
   const userChoiceOption = `<li class="list-item button is-link">${userChoices[0]}</li>`;
+  console.log(choicesParent);
+  choicesParent.append(userChoiceOption);
 };
 
-const constructSearchResults = function () {
+const constructSearchResults = function (results) {
   const searchParent = $("#search-container");
 
   const searchResults = `<div class="tile is-child box">
@@ -40,4 +43,14 @@ const constructSearchResults = function () {
     sit molestias?
   </p>
 </div>`;
+  //searchParent.empty();
+  searchParent.append(searchResults);
+  console.log(searchParent);
 };
+
+const onReady = function () {
+  constructSearchResults();
+  constructUserChoices();
+};
+
+$(document).ready(onReady);
