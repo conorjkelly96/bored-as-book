@@ -56,20 +56,32 @@ const settings = {
 //   console.log(apiCall);
 // });
 
-const getApiCall = async function (url) {
-  const data = $.ajax(settings).done(function (response) {
-    const apiCall = response;
-    console.log(apiCall);
-    return apiCall;
-  });
+// const getApiCall = async function (url) {
+//   const data = $.ajax(settings).done(function (response) {
+//     const apiCall = response;
+//     console.log(apiCall);
+//     return apiCall;
+//   });
+// };
+
+const getChoicesFromLocalStorage = function () {
+  const choices = [JSON.parse(localStorage.getItem("myActivities"))];
 };
 
+getChoicesFromLocalStorage();
+
 //rendering choices from local storage
-const constructUserChoices = function (choices) {
-  const choicesParent = $("#user-choices-list");
-  const userChoiceOption = `<li class="list-item button is-link">${userChoices[0]}</li>`;
-  console.log(choicesParent);
-  choicesParent.append(userChoiceOption);
+const constructUserChoices = function (data) {
+  const choices = [JSON.parse(localStorage.getItem("myActivities"))];
+  console.log(choices.length);
+  //
+  const renderUserChoices = function (choice) {
+    const choicesParent = $("#user-choices-list");
+    const userChoiceOption = `<li class="list-item button is-link">${choice}</li>`;
+    choicesParent.append(userChoiceOption);
+  };
+
+  choices.forEach(renderUserChoices);
 };
 
 const constructSearchResults = function (results) {
@@ -84,14 +96,12 @@ const constructSearchResults = function (results) {
 </div>`;
   //searchParent.empty();
   searchParent.append(searchResults);
-  console.log(searchParent);
 };
 
 const onReady = function () {
   constructSearchResults(mockSearchResults);
   constructUserChoices(userChoices);
-  const data = localStorage.getItem(choiceDataKey);
-  getApiCall();
+  // getApiCall();
 };
 
 $(document).ready(onReady);
