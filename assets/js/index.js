@@ -63,29 +63,15 @@ const handleUserChoices = async function (event) {
 
   if (target.data("choice") === "yes") {
     // get data from local storage
-    // const myActivities = JSON.parse(localStorage.getItem("myActivities")) ?? {};
     const myActivities = JSON.parse(localStorage.getItem("myActivities")) ?? [];
-
-    // get the category
-    // const category = target.data("category");
 
     // get the activity
     const category = $("#activity-name").text();
     console.log(category);
 
-    // get the category list
-    // const activities = myActivities[category] ?? [];
-
-    // const activities = [];
     myActivities.push(category);
     // push the choice data in the list
-    // activities.push(choiceData);
 
-    // set the list back in object
-    // myActivities[category] = activities;
-
-    // store choice data in local storage
-    // localStorage.setItem("myActivities", JSON.stringify(myActivities));
     localStorage.setItem("myActivities", JSON.stringify(myActivities));
   }
 
