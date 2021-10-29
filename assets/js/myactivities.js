@@ -44,7 +44,7 @@ const settings = {
   // see CORS documentation https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
   crossDomain: true,
   // URL for the API request
-  url: "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/WebSearchAPI?q=covid%2019&pageNumber=1&pageSize=10&autoCorrect=true&safeSearch=true",
+  url: `https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/WebSearchAPI?q=${q}&pageNumber=1&pageSize=10&autoCorrect=true&safeSearch=true`,
   method: "GET",
   // Header Objects: https://developer.mozilla.org/en-US/docs/Web/API/Headers
   headers: {
@@ -53,18 +53,13 @@ const settings = {
   },
 };
 
-const apiCall = $.ajax(settings).done(function (response) {
-  const apiCall = response;
-  console.log(apiCall);
-});
-
-// const getApiCall = async function (url) {
-//   const data = $.ajax(settings).done(function (response) {
-//     const apiCall = response;
-//     console.log(apiCall);
-//     return apiCall;
-//   });
-// };
+const getApiCall = async function (url) {
+  const data = $.ajax(settings).done(function (response) {
+    const apiCall = response;
+    console.log(apiCall);
+    return apiCall;
+  });
+};
 
 const getChoicesFromLocalStorage = function () {
   const choices = [JSON.parse(localStorage.getItem("myActivities"))];
@@ -103,7 +98,7 @@ const onReady = function () {
   constructSearchResults(mockSearchResults);
   constructUserChoices(userChoices);
   getChoicesFromLocalStorage();
-  // getApiCall();
+  getApiCall();
 };
 
 $(document).ready(onReady);
