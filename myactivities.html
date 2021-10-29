@@ -43,72 +43,120 @@
     </header>
 
     <main>
-      <!--Activity Cards -->
-      <section>
-        <div class="card-music">
-          <h2>Music</h2>
-        </div>
-        <div class="leftbox-music">
-          <h2>Activity 1</h2>
-          <p>
-            orem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-            mollitia, molestiae quas vel sint
-          </p>
-        </div>
-      </section>
+      <!-- Search Input Section -->
+      <div class="column is-12 input-parent-container">
+        <!-- Column for search history -->
+        <div class="input-container">
+          <div class="field column is-one-third input-div">
+            <label class="label has-text-white">Search For A City Below:</label>
+            <div class="control has-icons-left">
+              <input
+                size="5"
+                class="input"
+                type="text"
+                placeholder="Where next?"
+              />
+              <span class="icon is-small is-left">
+                <i class="fas fa-globe"></i>
+              </span>
+            </div>
+          </div>
 
-      <section>
-        <div class="middlebox-music">
-          <h2>Activity 2</h2>
-          <p>
-            orem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-            mollitia, molestiae quas vel sint
-          </p>
+          <div class="field is-grouped">
+            <div class="control">
+              <button type="submit" class="button is-link">Search</button>
+            </div>
+            <div class="control">
+              <button class="button is-link is-danger">Cancel</button>
+            </div>
+          </div>
         </div>
-      </section>
+      </div>
 
-      <section>
-        <div class="rightbox-music">
-          <h2>Activity 3</h2>
-          <p>
-            orem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-            mollitia, molestiae quas vel sint
-          </p>
-        </div>
-      </section>
+      <hr />
 
-      <section>
-        <div class="card-social">
-          <h2>Social</h2>
-        </div>
-        <div class="leftbox-social">
-          <h2>Activity 1</h2>
-          <p>
-            orem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-            mollitia, molestiae quas vel sint
-          </p>
-        </div>
-      </section>
+      <!-- Search List for user choices -->
+      <div>
+        <ul
+          class="column is-flex-direction-column is-vertical"
+          id="user-choices-list"
+        ></ul>
+      </div>
 
-      <section>
-        <div class="middlebox-social">
-          <h2>Activity 2</h2>
-          <p>
-            orem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-            mollitia, molestiae quas vel sint
-          </p>
-        </div>
-      </section>
+      <!-- Search Tiles after user executes a search query -->
+      <div class="tile-container">
+        <div class="tile is-parent is-vertical is-10" id="search-container">
+          <div class="tile is-child box">
+            <p class="title">Search Result</p>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero
+              facilis aliquid similique sint, reiciendis cumque inventore rerum
+              unde eligendi iste est a optio. Velit magnam voluptatem eius quis
+              sit molestias?
+            </p>
+          </div>
 
-      <section>
-        <div class="rightbox-social">
-          <h2>Activity 3</h2>
-          <p>
-            orem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-            mollitia, molestiae quas vel sint
-          </p>
+          <div class="tile is-child box">
+            <p class="title">Search Result</p>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero
+              facilis aliquid similique sint, reiciendis cumque inventore rerum
+              unde eligendi iste est a optio. Velit magnam voluptatem eius quis
+              sit molestias?
+            </p>
+          </div>
+
+          <div class="tile is-child box">
+            <p class="title">Search Result</p>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero
+              facilis aliquid similique sint, reiciendis cumque inventore rerum
+              unde eligendi iste est a optio. Velit magnam voluptatem eius quis
+              sit molestias?
+            </p>
+          </div>
+
+          <div class="tile is-child box">
+            <p class="title">Search Result</p>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero
+              facilis aliquid similique sint, reiciendis cumque inventore rerum
+              unde eligendi iste est a optio. Velit magnam voluptatem eius quis
+              sit molestias?
+            </p>
+          </div>
+
+          <div class="tile is-child box">
+            <p class="title">Search Result</p>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero
+              facilis aliquid similique sint, reiciendis cumque inventore rerum
+              unde eligendi iste est a optio. Velit magnam voluptatem eius quis
+              sit molestias?
+            </p>
+          </div>
+
+          <div class="tile is-child box">
+            <p class="title">Search Result</p>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero
+              facilis aliquid similique sint, reiciendis cumque inventore rerum
+              unde eligendi iste est a optio. Velit magnam voluptatem eius quis
+              sit molestias?
+            </p>
+          </div>
+
+          <div class="tile is-child box">
+            <p class="title">Search Result</p>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero
+              facilis aliquid similique sint, reiciendis cumque inventore rerum
+              unde eligendi iste est a optio. Velit magnam voluptatem eius quis
+              sit molestias?
+            </p>
+          </div>
         </div>
-      </section>
+      </div>
     </main>
 
     <footer class="footer is-transparent">
