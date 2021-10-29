@@ -6,22 +6,20 @@ const userChoices = [
   "Go to the cinema",
 ];
 
-const mockSearchResults = [
-  {
-    id: "5496466817154867838",
-    title: "Learn C and C++ Programming - Cprogramming.com",
-    url: "https://www.cprogramming.com",
-    description:
-      "The best site for C and C++ programming. Popular, beginner-friendly C and C++ programming tutorials to help you master C and C++!",
-    body: "The best site for C and C++ programming. Popular, beginner-friendly C and C++ programming tutorials to help you master C and C++!",
-    snippet:
-      "The best site for C and C++ <b>programming</b>. Popular, beginner-friendly C and C++ <b>programming</b> tutorials to help you master C and C++!.",
-    keywords: "",
-    language: "en",
-    isSafe: true,
-    datePublished: "0001-01-01T00:00:00",
-  },
-];
+const mockSearchResults = {
+  id: "5496466817154867838",
+  title: "Learn C and C++ Programming - Cprogramming.com",
+  url: "https://www.cprogramming.com",
+  description:
+    "The best site for C and C++ programming. Popular, beginner-friendly C and C++ programming tutorials to help you master C and C++!",
+  body: "The best site for C and C++ programming. Popular, beginner-friendly C and C++ programming tutorials to help you master C and C++!",
+  snippet:
+    "The best site for C and C++ <b>programming</b>. Popular, beginner-friendly C and C++ <b>programming</b> tutorials to help you master C and C++!.",
+  keywords: "",
+  language: "en",
+  isSafe: true,
+  datePublished: "0001-01-01T00:00:00",
+};
 
 //rendering choices from local storage
 const constructUserChoices = function (choices) {
@@ -35,13 +33,11 @@ const constructSearchResults = function (results) {
   const searchParent = $("#search-container");
 
   const searchResults = `<div class="tile is-child box">
-  <p class="title">Search Result</p>
+  <p class="title">${results.title}</p>
   <p>
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero
-    facilis aliquid similique sint, reiciendis cumque inventore rerum
-    unde eligendi iste est a optio. Velit magnam voluptatem eius quis
-    sit molestias?
+  ${results.description}
   </p>
+  <a>${results.url}</a>
 </div>`;
   //searchParent.empty();
   searchParent.append(searchResults);
@@ -49,8 +45,8 @@ const constructSearchResults = function (results) {
 };
 
 const onReady = function () {
-  constructSearchResults();
-  constructUserChoices();
+  constructSearchResults(mockSearchResults);
+  constructUserChoices(userChoices);
 };
 
 $(document).ready(onReady);
