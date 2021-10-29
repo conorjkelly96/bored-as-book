@@ -13,8 +13,7 @@ const pageSize = 10;
 
 const autoCorrect = true;
 
-const BASE_URL =
-  "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/";
+const BASE_URL = "https://contextualwebsearch-websearch-v1.p.rapidapi.com";
 
 const query = "covid%2019";
 
@@ -35,31 +34,28 @@ const mockSearchResults = {
   datePublished: "0001-01-01T00:00:00",
 };
 
-// SEE WEEK 6 ACTIVITY 5 FOR AJAX API CALLS
-// Conor 29/10: Why does this API require ajax json method to evoke a response?
-// please see documentation: https://api.jquery.com/jquery.ajax/
+let myHeaders = new Headers();
+
+myHeaders.append("x-rapidapi-host", `${BASE_URL}`);
+myHeaders.append("x-rapidapi-key", `${API_KEY}`);
+
 const settings = {
-  // CK: this is an asynchronous function
   async: true,
-  // see CORS documentation https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
   crossDomain: true,
-  // URL for the API request
-  url: `https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/WebSearchAPI?q=${query}&pageNumber=1&pageSize=10&autoCorrect=true&safeSearch=true`,
   method: "GET",
-  // Header Objects: https://developer.mozilla.org/en-US/docs/Web/API/Headers
-  headers: {
-    "x-rapidapi-host": "contextualwebsearch-websearch-v1.p.rapidapi.com",
-    "x-rapidapi-key": "bc1d02851emsh853dc79af4fea2cp1e4839jsned8c0b9e23af",
-  },
+  headers: myHeaders,
 };
 
 // CK: the response has been tested with the const query variable
-const getApiCall = async function (url) {
-  const data = $.ajax(settings).done(function (response) {
-    const apiCall = response;
-    console.log(apiCall);
-    return apiCall;
-  });
+const getApiCall = async function (activity) {
+  try {
+    const url = `${BASE_URL}/api/Search/WebSearchAPI?q=${activity}&pageNumber=1&pageSize=10&autoCorrect=true&safeSearch=true`;
+    const data = await fetch(url, settings);
+    console.log(data);
+    return await data.json();
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 const getChoicesFromLocalStorage = function () {
@@ -73,35 +69,56 @@ const constructUserChoices = function (data) {
     ...Object.values(JSON.parse(localStorage.getItem("myActivities"))),
   ].flat();
 
+  const choicesParent = $("#user-choices-list");
+  choicesParent.on("click", handleActivitySelection);
   // for each activity, create a list item and append to the list item parent
   const renderUserChoices = function (choice) {
-    const choicesParent = $("#user-choices-list");
-    const userChoiceOption = `<li class="list-item button is-link">${choice.activity}</li>`;
+    const text = choice.activity.toLowerCase();
+    console.log(choice.activity);
+    const userChoiceOption =
+      '<li data-activity="' +
+      text +
+      "\" class='list-item button is-link' >" +
+      choice.activity +
+      "</li>";
     choicesParent.append(userChoiceOption);
   };
 
   datafromLS.forEach(renderUserChoices);
 };
 
-const constructSearchResults = function (results) {
-  const searchParent = $("#search-container");
+// cfunction to listen to even listener from the selected activity
+const handleActivitySelection = async (event) => {
+  const target = $(event.target);
+  if (target.is("li")) {
+    const activity = target.data("activity");
 
-  const searchResults = `<div class="tile is-child box">
-  <p class="title">${results.title}</p>
+    const suggestedActivity = (await getApiCall(activity)) || [];
+    console.log(suggestedActivity);
+    // construct activity card here with the response
+    constructSearchActivity(suggestedActivity);
+  }
+};
+const constructSearchActivity = function (results) {
+  const searchParent = $("#search-container");
+  const constructSearchResults = function (result) {
+    const searchResult = `<div class="tile is-child box">
+  <p class="title">${result.title}</p>
   <p>
-  ${results.description}
+  ${result.description}
   </p>
-  <a>${results.url}</a>
+  <a>${result.url}</a>
   </div>`;
-  //searchParent.empty();
-  searchParent.append(searchResults);
+    //searchParent.empty();
+    searchParent.append(searchResult);
+  };
+  results.forEach(constructSearchResults);
 };
 
 const onReady = function () {
-  constructSearchResults(mockSearchResults);
+  // constructSearchResults(mockSearchResults);
   constructUserChoices(userChoices);
   getChoicesFromLocalStorage();
-  getApiCall();
 };
 
 $(document).ready(onReady);
