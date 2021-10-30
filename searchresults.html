@@ -43,9 +43,53 @@
     </header>
 
     <main>
-      <!--Activity Cards -->
+      <!-- Search Input Section -->
+      <div class="column is-12 input-parent-container">
+        <!-- Column for search history -->
+        <div class="input-container">
+          <div class="field column is-one-third input-div">
+            <p class="label has-text-white">Your Activities:</p>
+            <div class="control has-icons-left">
+              <input
+                size="5"
+                class="input"
+                type="text"
+                placeholder="Where next?"
+              />
+              <span class="icon is-small is-left">
+                <i class="fas fa-globe"></i>
+              </span>
+            </div>
+          </div>
 
-      <section class="category-parent" id="all-categories"></section>
+          <div class="field is-grouped">
+            <div class="control">
+              <button type="submit" class="button is-link">Search</button>
+            </div>
+            <div class="control">
+              <button class="button is-link is-danger">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <!-- Search List for user choices -->
+      <div>
+        <ul
+          class="column is-flex-direction-column is-vertical"
+          id="user-choices-list"
+        ></ul>
+      </div>
+
+      <!-- Search Tiles after user executes a search query -->
+      <div class="tile-container">
+        <div
+          class="tile is-parent is-vertical is-10"
+          id="search-container"
+        ></div>
+      </div>
     </main>
 
     <footer class="footer is-transparent">
