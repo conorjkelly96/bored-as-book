@@ -114,6 +114,10 @@ main {
   border-radius: 100%;
 }
 
+.logo-container {
+  text-align: center;
+}
+
 /* For Mobile View Ports */
 @media only screen and (max-width: 768px) {
   #search-list {
