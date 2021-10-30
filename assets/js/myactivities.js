@@ -1,5 +1,4 @@
-// BELOW ARE THE FOLLOWING INPUTS TO THE API URL
-
+// Using object Mapping to display categories on activity card
 const categoryMapper = {
   social: "Social",
   recreational: "Recreational",

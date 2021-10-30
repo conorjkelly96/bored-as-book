@@ -2,6 +2,15 @@ const choicesContainer = $("#choices-container");
 const cardContainer = $("#card-container");
 const baseURL = "https://www.boredapi.com";
 
+// Using object Mapping to display categories on activity card
+const categoryMapper = {
+  social: "Social",
+  recreational: "Recreational",
+  music: "Music",
+  education: "Education",
+  relaxation: "Relaxation",
+};
+
 // to store api data
 let choiceData;
 
