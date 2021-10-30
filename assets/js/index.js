@@ -1,13 +1,9 @@
 const choicesContainer = $("#choices-container");
 const cardContainer = $("#card-container");
 const baseURL = "https://www.boredapi.com";
-// if making API call this sets to TRUE, else FALSE
-let currentStatus;
 
 // to store api data
 let choiceData;
-// local storage key name
-const choiceDataKey = "choiceData";
 
 const resetChoicesCSS = function (buttons) {
   const removeSuccessClass = function (buttonOption) {
@@ -64,6 +60,10 @@ const handleUserChoices = async function (event) {
     // get the category list
     const activities = myActivities[category] ?? [];
 
+    // calculating current time
+    const timeStamp = moment();
+    choiceData.timeStamp = timeStamp;
+
     // push the choice data in the list
     activities.push(choiceData);
 
@@ -113,16 +113,5 @@ const constructActivityCard = function (activity) {
   activityParent.append(activityCard);
 };
 
-const onReady = function () {
-  //get data from local storage
-  const data = localStorage.getItem(choiceDataKey);
-
-  if (data) {
-    constructActivityCard(JSON.parse(data));
-  }
-
-  choicesContainer.on("click", handleSelectedChoice);
-  cardContainer.on("click", handleUserChoices);
-};
-
-$(document).ready(onReady);
+choicesContainer.on("click", handleSelectedChoice);
+cardContainer.on("click", handleUserChoices);

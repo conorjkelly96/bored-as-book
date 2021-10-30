@@ -54,9 +54,10 @@ const constructUserChoices = function (userChoices) {
               <p class="subtitle is-6">${categoryMapper[category]}</p>
             </div>
           </div>
-
           <div class="content">
-            <div class="is-size-7">Added on: Tue 5th Nov, 2021</div>
+            <div class="is-size-7">Added on: ${moment(choice.timeStamp).format(
+              "ddd Do MMM, YYYY"
+            )}</div>
           </div>
           <footer class="card-footer pt-4">
             <button class="card-footer-item button is-info m-1">
