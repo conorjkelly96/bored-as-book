@@ -71,7 +71,6 @@ const settings = {
 
 // CK: the response has been tested with the const query variable
 const getApiCall = async function (activity) {
-  console.log(myHeaders);
   try {
     const url = `${BASE_URL}/api/Search/WebSearchAPI?q=${activity}&pageNumber=1&pageSize=10&autoCorrect=true&safeSearch=true`;
     const data = await fetch(url, settings);
@@ -121,7 +120,6 @@ const constructUserChoices = function (data) {
   // for each activity, create a list item and append to the list item parent
   const renderUserChoices = function (choice) {
     const text = choice;
-    console.log(choice.activity);
     const userChoiceOption =
       '<li data-activity="' +
       text +
@@ -154,7 +152,6 @@ const handleActivitySelection = async (event) => {
     const activity = target.data("activity");
 
     const suggestedActivity = (await getApiCall(activity)) || [];
-    console.log(suggestedActivity);
     // construct activity card here with the response
     constructSearchActivity(suggestedActivity.value);
   }
@@ -176,10 +173,8 @@ const constructSearchActivity = function (results) {
   results.forEach(constructSearchResults);
 };
 const onReady = function () {
-  // constructSearchResults(mockSearchResults);
   constructUserChoices(userChoices);
   getChoicesFromLocalStorage();
-  // console.log(getApiCall());
 };
 
 $(document).ready(onReady);
