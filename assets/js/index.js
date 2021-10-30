@@ -63,14 +63,20 @@ const handleUserChoices = async function (event) {
 
   if (target.data("choice") === "yes") {
     // get data from local storage
-    const myActivities = JSON.parse(localStorage.getItem("myActivities")) ?? [];
+    const myActivities = JSON.parse(localStorage.getItem("myActivities")) ?? {};
 
     // get the activity
-    const category = $("#activity-name").text().trim();
+    const category = target.data("category");
     console.log(category);
 
-    myActivities.push(category);
+    // What we need from the card to take to LS
+    // Activity
+    // Price
+    // Date Clicked
+    // Category
+
     // push the choice data in the list
+    myActivities.push(category);
 
     localStorage.setItem("myActivities", JSON.stringify(myActivities));
   }
