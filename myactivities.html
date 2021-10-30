@@ -43,53 +43,44 @@
     </header>
 
     <main>
-      <!-- Search Input Section -->
-      <div class="column is-12 input-parent-container">
-        <!-- Column for search history -->
-        <div class="input-container">
-          <div class="field column is-one-third input-div">
-            <p class="label has-text-white">Your Activities:</p>
-            <div class="control has-icons-left">
-              <input
-                size="5"
-                class="input"
-                type="text"
-                placeholder="Where next?"
-              />
-              <span class="icon is-small is-left">
-                <i class="fas fa-globe"></i>
-              </span>
-            </div>
-          </div>
+      <!--Activity Cards -->
 
-          <div class="field is-grouped">
-            <div class="control">
-              <button type="submit" class="button is-link">Search</button>
-            </div>
-            <div class="control">
-              <button class="button is-link is-danger">Cancel</button>
+      <section class="category-parent">
+        <div class="card-category">
+          <h2 class="title has-text-white">Social</h2>
+        </div>
+
+        <div class="cards-container" id="card-container">
+          <!-- Activity Card -->
+          <div class="card activity-card">
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <div class="icon pay-icon">
+                    <i class="fas fa-dollar-sign"></i>
+                  </div>
+                </div>
+                <div class="media-content">
+                  <p class="title is-4">Play Golf</p>
+                  <p class="subtitle is-6">Recreational</p>
+                </div>
+              </div>
+
+              <div class="content">
+                <div class="is-size-7">Added on: Tue 5th Nov, 2021</div>
+              </div>
+              <footer class="card-footer pt-4">
+                <button class="card-footer-item button is-info m-1">
+                  View
+                </button>
+                <button class="card-footer-item button is-danger m-1">
+                  Delete
+                </button>
+              </footer>
             </div>
           </div>
         </div>
-      </div>
-
-      <hr />
-
-      <!-- Search List for user choices -->
-      <div>
-        <ul
-          class="column is-flex-direction-column is-vertical"
-          id="user-choices-list"
-        ></ul>
-      </div>
-
-      <!-- Search Tiles after user executes a search query -->
-      <div class="tile-container">
-        <div
-          class="tile is-parent is-vertical is-10"
-          id="search-container"
-        ></div>
-      </div>
+      </section>
     </main>
 
     <footer class="footer is-transparent">
@@ -109,6 +100,6 @@
       referrerpolicy="no-referrer"
     ></script>
 
-    <script src="./assets/js/myactivities.js"></script>
+    <script src="./assets/js/index.js"></script>
   </body>
 </html>

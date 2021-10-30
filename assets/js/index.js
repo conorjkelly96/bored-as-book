@@ -66,7 +66,7 @@ const handleUserChoices = async function (event) {
     const myActivities = JSON.parse(localStorage.getItem("myActivities")) ?? [];
 
     // get the activity
-    const category = $("#activity-name").text();
+    const category = $("#activity-name").text().trim();
     console.log(category);
 
     myActivities.push(category);
