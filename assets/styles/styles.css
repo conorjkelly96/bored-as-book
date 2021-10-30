@@ -22,7 +22,11 @@ body {
 }
 
 html {
-  background-image: url(/bored-as-book/assets/images/bg-image-bored-as-book.jpg);
+  background-image: url(../images/bg-image-bored-as-book.jpg);
+  background-attachment: fixed;
+  background-size: cover;                     
+  background-repeat: no-repeat;
+  background-position: center center;   
 }
 
 main {
