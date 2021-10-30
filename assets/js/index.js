@@ -85,30 +85,34 @@ const handleUserChoices = async function (event) {
 const constructActivityCard = function (activity) {
   const activityParent = $("#card-container");
 
-  const activityCard = `<div class="card ml-3 mr-3">
-    <div class="card-content">
-      <p id="activity-name" class="activity-text">
-        ${activity.activity}
-      </p>
-      <p id="activity-type" class="activity-text">${activity.type}</p>
-      <p id="activity-cost" class="activity-text">Cost Index: ${
-        activity.price * 10
-      }/10</p>
+  const activityCard = `<div class="card activity-card">
+  <div class="card-content">
+    <div class="media">
+       ${activity.price}
+      <div class="media-content">
+        <p class="title is-4">${activity.activity}</p>
+        <p class="subtitle is-6">${activity.type}</p>
+      </div>
     </div>
-    <div class="card-footer">
-      <button data-choice="no" id="no-btn" class="card-footer-item button is-danger" data-category=${
-        activity.type
-      }>
-        No
-      </button>
-      <button data-choice="yes" id="yes-btn" class="card-footer-item button is-success" data-category=${
-        activity.type
-      }>
-        Yes
-      </button>
+    <div class="content">
+      <div class="is-size-7">Added on: ${moment(activity.timeStamp).format(
+        "ddd Do MMM, YYYY"
+      )}</div>
     </div>
-  </div>`;
-
+    <footer class="card-footer pt-4">
+    <button data-choice="no" id="no-btn" class="card-footer-item button is-danger" data-category=${
+      activity.type
+    }>
+      No
+    </button>
+    <button data-choice="yes" id="yes-btn" class="card-footer-item button is-success" data-category=${
+      activity.type
+    }>
+      Yes
+    </button>
+    </footer>
+  </div>
+</div>`;
   activityParent.empty();
   activityParent.append(activityCard);
 };
