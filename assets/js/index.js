@@ -139,9 +139,11 @@ const renderNewJoke = async function () {
     console.log(jokeObject);
 
     const jokeCard = `<div class="card mt-6">
-      <header class="card-header">
-        <p class="card-header-title" id="clock"> Bored O'Clock:
-        </p>
+      <header class="card-header has-text-centre">
+      <p class="card-header-title"> Bored O'Clock:<span class="card-header-title" id="clock">
+      </span>
+      </p>
+        
       </header>
       <div class="card-content">
         <div class="content">
