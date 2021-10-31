@@ -70,6 +70,8 @@ const handleUserChoices = async function (event) {
 
   if (target.data("choice") === "yes") {
     // get data from local storage
+    renderAlert();
+
     const myActivities = JSON.parse(localStorage.getItem("myActivities")) ?? {};
 
     // get the category
@@ -156,9 +158,6 @@ const renderNewJoke = async function () {
 
 // Add Dollar Sign to activity.price.
 const constructActivityCard = function (activity) {
-  const activityChoice = activity[activity];
-  console.log(activityChoice);
-
   const activityCard = `<div class="card activity-card">
   <div class="card-content">
     <div class="media">
@@ -183,13 +182,14 @@ const constructActivityCard = function (activity) {
   </div>
 </div>`;
 
-  // cardContainer.empty();
+  cardContainer.empty();
   cardContainer.append(activityCard);
 };
 
 // Rendering alert depending on user choice
 const renderAlert = function (event) {
   const target = $(event.target);
+  console.log(target);
 
   const yesAlert = `<div class="notification is-primary">
   <button class="delete"></button>
@@ -203,10 +203,12 @@ const renderAlert = function (event) {
 
   if (target.data("choice") === "yes") {
     //if the user selects YES to an activity, then display the yesAlert
-    cardContainer.append(yesAlert);
+    console.log("yes");
+    $("#notification-container").append(yesAlert);
   } else {
     //if the user selects NO to an activity, then display the noAlert
-    cardContainer.append(noAlert);
+    console.log("no");
+    $("#notification-container").append(noAlert);
   }
 };
 
