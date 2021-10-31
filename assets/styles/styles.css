@@ -22,11 +22,17 @@ body {
 }
 
 html {
-  background-image: url(/bored-as-book/assets/images/bg-image-bored-as-book.jpg);
+  background-image: url(/bored-as-book/assets/images/start-digital-4utnKVmVQR8-unsplash.jpg);
+  background-size: 1000px;
 }
 
 main {
   min-height: 80vh;
+}
+
+.modal-background {
+  background-color: coral;
+  opacity: 0.75;
 }
 
 .logo {
@@ -46,6 +52,12 @@ main {
 
 .category-btn {
   margin-top: 10px;
+  background-color: coral;
+  color: white;
+}
+
+.category-btn:hover {
+  color: var(--flickr-pink);
 }
 
 .form-input {
@@ -70,6 +82,13 @@ main {
   text-align: center;
   margin: auto !important;
   margin-top: 80px !important;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* Overwriting BULMA padding on input div */

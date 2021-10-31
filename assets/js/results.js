@@ -10,21 +10,6 @@ const BASE_URL = "https://contextualwebsearch-websearch-v1.p.rapidapi.com";
 
 const query = "mancheser united";
 
-const mockSearchResults = {
-  id: "5496466817154867838",
-  title: "Learn C and C++ Programming - Cprogramming.com",
-  url: "https://www.cprogramming.com",
-  description:
-    "The best site for C and C++ programming. Popular, beginner-friendly C and C++ programming tutorials to help you master C and C++!",
-  body: "The best site for C and C++ programming. Popular, beginner-friendly C and C++ programming tutorials to help you master C and C++!",
-  snippet:
-    "The best site for C and C++ <b>programming</b>. Popular, beginner-friendly C and C++ <b>programming</b> tutorials to help you master C and C++!.",
-  keywords: "",
-  language: "en",
-  isSafe: true,
-  datePublished: "0001-01-01T00:00:00",
-};
-
 const settings = {
   headers: {
     "x-rapidapi-host": `"${BASE_URL}"`,
