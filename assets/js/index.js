@@ -6,19 +6,26 @@ const boredBaseURL = "https://www.boredapi.com";
 const dadJokeBaseUrl =
   "https://dad-jokes.p.rapidapi.com/random/joke?=&nsfw=false";
 
-fetch(dadJokeBaseUrl, {
-  method: "GET",
+// dadJokeAPI header settings
+const settings = {
   headers: {
     "x-rapidapi-host": "dad-jokes.p.rapidapi.com",
     "x-rapidapi-key": "bc1d02851emsh853dc79af4fea2cp1e4839jsned8c0b9e23af",
   },
-})
-  .then((response) => {
-    console.log(response);
-  })
-  .catch((err) => {
-    console.error(err);
-  });
+};
+
+// fetching joke from Dad Joke api
+const fetchDataFromApi = async function (url, settings = {}) {
+  try {
+    console.log(url);
+    const response = await fetch(url, settings);
+    const data = await response.json();
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 // to store api data
 let choiceData;
@@ -33,7 +40,7 @@ const resetChoicesCSS = function (buttons) {
   buttons.forEach(removeSuccessClass);
 };
 
-// function to make the API call
+// function to make the API call to bored API
 const getApiCall = async function (url) {
   const data = await fetch(url);
   return data.json();
