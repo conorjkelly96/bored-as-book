@@ -7,7 +7,6 @@ const categoryMapper = {
   relaxation: "Relaxation",
 };
 const modalContainer = $("#modal-container");
-// All categories container
 const allCategoriesContainer = $("#all-categories");
 
 const constructCategoryTitle = function (category) {
@@ -83,7 +82,7 @@ const constructUserChoices = function (userChoices) {
   selectedUserChoices.forEach(renderCategory);
 };
 
-const clearLS = function (event) {
+const clearLS = function () {
   alert(
     "Doing this will remove all the fun activities you've saved, are you sure you want to continue?"
   );
