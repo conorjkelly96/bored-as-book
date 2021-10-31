@@ -39,18 +39,12 @@ const resetChoicesCSS = function (buttons) {
   buttons.forEach(removeSuccessClass);
 };
 
-// function to make the API call to bored API
-const getApiCall = async function (url) {
-  const data = await fetch(url);
-  return data.json();
-};
-
 const renderActivityCard = async function (categorySelected) {
   const url =
     categorySelected === "random"
       ? `${boredBaseURL}/api/activity`
       : `${boredBaseURL}/api/activity?type=${categorySelected}`;
-  choiceData = await getApiCall(url);
+  choiceData = await fetchDataFromApi(url);
   constructActivityCard(choiceData);
 };
 
@@ -75,6 +69,9 @@ const handleUserChoices = async function (event) {
   const target = $(event.target);
 
   if (target.data("choice") === "yes") {
+    // Render Alert depending on user choice - CK - not currently working
+    // renderAlert();
+
     // get data from local storage
     const myActivities = JSON.parse(localStorage.getItem("myActivities")) ?? {};
 
@@ -134,10 +131,6 @@ const renderNewJoke = async function () {
 
   // constructingJokeCard for every time a joke loads
   const constructJokeCard = function (joke) {
-    console.log(joke.body[0].punchline);
-    const jokeObject = Object.keys(joke);
-    console.log(jokeObject);
-
     const jokeCard = `<div class="card mt-6">
       <header class="card-header has-text-centre">
       <p class="card-header-title"> Bored O'Clock:<span class="card-header-title" id="clock">
@@ -162,10 +155,6 @@ const renderNewJoke = async function () {
 
 // Add Dollar Sign to activity.price.
 const constructActivityCard = function (activity) {
-  const activityParent = $("#card-container");
-  const activityChoice = activity[activity];
-  console.log(activityChoice);
-
   const activityCard = `<div class="card activity-card">
   <div class="card-content">
     <div class="media">
@@ -190,12 +179,14 @@ const constructActivityCard = function (activity) {
   </div>
 </div>`;
 
-  activityParent.empty();
-  activityParent.append(activityCard);
+  cardContainer.empty();
+  cardContainer.append(activityCard);
 };
 
+// Rendering alert depending on user choice
 const renderAlert = function (event) {
   const target = $(event.target);
+  console.log(target);
 
   const yesAlert = `<div class="notification is-primary">
   <button class="delete"></button>
@@ -209,10 +200,12 @@ const renderAlert = function (event) {
 
   if (target.data("choice") === "yes") {
     //if the user selects YES to an activity, then display the yesAlert
-    cardContainer.append(yesAlert);
+    console.log("yes");
+    $("#notification-container").append(yesAlert);
   } else {
     //if the user selects NO to an activity, then display the noAlert
-    cardContainer.append(noAlert);
+    console.log("no");
+    $("#notification-container").append(noAlert);
   }
 };
 
@@ -225,11 +218,11 @@ const renderModal = function () {
     <div class="modal-background"></div>
     <div class="modal-content">
       <p class="title has-text-centered has-text-white">
-        Welcome to Bored as Book! A place to find new things to do, joke
-        around and waste time
+        Welcome to Bored as Book! A place to explore new interests, joke
+        around and waste time &#128526;
       </p>
       <p class="title has-text-centered has-text-white">
-        Don't be boring... close the window to start the fun!
+        Don't be boring... close the window to start the fun! &#128527; 
       </p>
     </div>
     <button id="modal-close" class="modal-close"></button>
@@ -244,9 +237,25 @@ const closeModal = function (event) {
   const modalDiv = $("#modal-div");
 
   if (target.is("button")) {
-    console.log("correct");
     modalDiv.removeClass("is-active");
   }
+};
+
+modalContainer.on("click", closeModal);
+
+const closeNotification = function (event) {
+  const target = $(event.target);
+  document.addEventListener("DOMContentLoaded", () => {
+    (document.querySelectorAll(".notification .delete") || []).forEach(
+      ($delete) => {
+        const $notification = $delete.parentNode;
+
+        $delete.addEventListener("click", () => {
+          $notification.parentNode.removeChild($notification);
+        });
+      }
+    );
+  });
 };
 
 modalContainer.on("click", closeModal);
