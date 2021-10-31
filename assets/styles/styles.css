@@ -72,6 +72,13 @@ main {
   margin-top: 80px !important;
 }
 
+.card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 /* Overwriting BULMA padding on input div */
 .input-div {
   padding: 0px;
