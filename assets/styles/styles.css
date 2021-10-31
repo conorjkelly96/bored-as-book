@@ -23,11 +23,15 @@ body {
 
 html {
   background-image: url(/bored-as-book/assets/images/start-digital-4utnKVmVQR8-unsplash.jpg);
-  background-size: 1000px;
 }
 
 main {
   min-height: 80vh;
+}
+
+.modal-background {
+  background-color: coral;
+  opacity: 0.75;
 }
 
 .logo {

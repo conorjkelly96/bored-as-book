@@ -204,11 +204,11 @@ const renderModal = function () {
   <div id="modal-div" class="modal is-active">
     <div class="modal-background"></div>
     <div class="modal-content">
-      <p class="has-text-centered has-text-white">
+      <p class="title has-text-centered has-text-white">
         Welcome to Bored as Book! A place to find new things to do, joke
         around and waste time
       </p>
-      <p class="has-text-centered has-text-white">
+      <p class="title has-text-centered has-text-white">
         Don't be boring... close the window to start the fun!
       </p>
     </div>
