@@ -17,14 +17,10 @@ const settings = {
 // fetching joke from Dad Joke api
 const fetchDataFromApi = async function (url, settings = {}) {
   try {
-    console.log(url);
     const response = await fetch(url, settings);
     const data = await response.json();
-    console.log(data);
     return data;
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 };
 
 // to store api data
@@ -121,35 +117,55 @@ const capitalizeFirstLetter = function (string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 };
 
-// constructingJokeCard for every time a joke loads
-const constructJokeCard = function (joke) {
-  const jokeContainer = $("#joke-container");
-
-  const jokeCard = `<div class="card mt-6">
-    <header class="card-header">
-      <p class="card-header-title">
-        The time is bored o'clock: 11:09 PM - 1 Jan 2016
-      </p>
-    </header>
-    <div class="card-content">
-      <div class="content">
-        <p>What did one wall say to the other wall?</p>
-        <p>I'll meet you at the corner!</p>
-      </div>
-    </div>
-    <footer class="card-footer">
-      <button
-        id="new-joke-btn"
-        class="card-footer-item button is-success"
-      >
-        New Joke
-      </button>
-    </footer>
-  </div>`;
-
-  jokeContainer.empty();
-  jokeContainer.append(jokeCard);
+const renderClock = function () {
+  function update() {
+    $("#clock").html(moment().format("DD MMMM YYYY H:mm:ss"));
+  }
+  setInterval(update, 1000);
 };
+
+// rendering joke cards on load
+const renderNewJoke = async function () {
+  const url = dadJokeBaseUrl;
+  const newJoke = await fetchDataFromApi(url, settings);
+
+  // constructingJokeCard for every time a joke loads
+  const constructJokeCard = function (joke) {
+    const jokeContainer = $("#joke-container");
+
+    console.log(joke);
+    const jokeObject = Object.keys(joke);
+    console.log(jokeObject);
+
+    const jokeCard = `<div class="card mt-6">
+      <header class="card-header">
+        <p class="card-header-title" id="clock">
+        </p>
+      </header>
+      <div class="card-content">
+        <div class="content">
+          <p>${joke}</p>
+          <p>${joke}</p>
+        </div>
+      </div>
+      <footer class="card-footer">
+        <button
+          id="new-joke-btn"
+          class="card-footer-item button is-success"
+        >
+          New Joke
+        </button>
+      </footer>
+    </div>`;
+
+    jokeContainer.empty();
+    jokeContainer.append(jokeCard);
+  };
+  // construct activity card here with the response
+  constructJokeCard(newJoke);
+};
+
+renderNewJoke();
 
 // Add Dollar Sign to activity.price.
 const constructActivityCard = function (activity) {
