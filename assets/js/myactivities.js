@@ -98,13 +98,12 @@ const renderNoActivitiesModal = function () {
         <div class="modal-background"></div>
         <div class="modal-content">
           <p class="title has-text-centered has-text-white">
-            You do not have any activities! Go back to <a href="./index.html">the homepage</a>to become less boring!
+            You do not have any activities! &#128556; Go back to <a href="./index.html">the homepage</a>to become less boring!
           </p>
-
         </div>
-        <button id="modal-close" class="modal-close"></button>
       </div>
       </div>`;
+    $("#clear-ls").remove();
     modalContainer.append(modalMessage);
   }
 };

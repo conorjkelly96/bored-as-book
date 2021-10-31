@@ -226,10 +226,10 @@ const renderModal = function () {
     <div class="modal-content">
       <p class="title has-text-centered has-text-white">
         Welcome to Bored as Book! A place to find new things to do, joke
-        around and waste time
+        around and waste time &#128526;
       </p>
       <p class="title has-text-centered has-text-white">
-        Don't be boring... close the window to start the fun!
+        Don't be boring... close the window to start the fun! &#128527; 
       </p>
     </div>
     <button id="modal-close" class="modal-close"></button>
