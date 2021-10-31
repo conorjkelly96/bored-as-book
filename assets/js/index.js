@@ -39,18 +39,12 @@ const resetChoicesCSS = function (buttons) {
   buttons.forEach(removeSuccessClass);
 };
 
-// function to make the API call to bored API
-const getApiCall = async function (url) {
-  const data = await fetch(url);
-  return data.json();
-};
-
 const renderActivityCard = async function (categorySelected) {
   const url =
     categorySelected === "random"
       ? `${boredBaseURL}/api/activity`
       : `${boredBaseURL}/api/activity?type=${categorySelected}`;
-  choiceData = await getApiCall(url);
+  choiceData = await fetchDataFromApi(url);
   constructActivityCard(choiceData);
 };
 
@@ -162,7 +156,6 @@ const renderNewJoke = async function () {
 
 // Add Dollar Sign to activity.price.
 const constructActivityCard = function (activity) {
-  const activityParent = $("#card-container");
   const activityChoice = activity[activity];
   console.log(activityChoice);
 
@@ -190,10 +183,11 @@ const constructActivityCard = function (activity) {
   </div>
 </div>`;
 
-  activityParent.empty();
-  activityParent.append(activityCard);
+  // cardContainer.empty();
+  cardContainer.append(activityCard);
 };
 
+// Rendering alert depending on user choice
 const renderAlert = function (event) {
   const target = $(event.target);
 
@@ -244,9 +238,25 @@ const closeModal = function (event) {
   const modalDiv = $("#modal-div");
 
   if (target.is("button")) {
-    console.log("correct");
     modalDiv.removeClass("is-active");
   }
+};
+
+modalContainer.on("click", closeModal);
+
+const closeNotification = function (event) {
+  const target = $(event.target);
+  document.addEventListener("DOMContentLoaded", () => {
+    (document.querySelectorAll(".notification .delete") || []).forEach(
+      ($delete) => {
+        const $notification = $delete.parentNode;
+
+        $delete.addEventListener("click", () => {
+          $notification.parentNode.removeChild($notification);
+        });
+      }
+    );
+  });
 };
 
 modalContainer.on("click", closeModal);
