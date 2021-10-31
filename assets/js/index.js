@@ -1,5 +1,6 @@
 const choicesContainer = $("#choices-container");
 const cardContainer = $("#card-container");
+const jokeContainer = $("#joke-container");
 // Bored-API base url
 const boredBaseURL = "https://www.boredapi.com";
 // Dad-Joke-API base url
@@ -131,31 +132,21 @@ const renderNewJoke = async function () {
 
   // constructingJokeCard for every time a joke loads
   const constructJokeCard = function (joke) {
-    const jokeContainer = $("#joke-container");
-
-    console.log(joke);
+    console.log(joke.body[0].punchline);
     const jokeObject = Object.keys(joke);
     console.log(jokeObject);
 
     const jokeCard = `<div class="card mt-6">
       <header class="card-header">
-        <p class="card-header-title" id="clock">
+        <p class="card-header-title" id="clock"> Bored O'Clock:
         </p>
       </header>
       <div class="card-content">
         <div class="content">
-          <p>${joke}</p>
-          <p>${joke}</p>
+          <p>${joke.body[0].setup}</p>
+          <p>${joke.body[0].punchline}</p>
         </div>
       </div>
-      <footer class="card-footer">
-        <button
-          id="new-joke-btn"
-          class="card-footer-item button is-success"
-        >
-          New Joke
-        </button>
-      </footer>
     </div>`;
 
     jokeContainer.empty();
@@ -164,8 +155,6 @@ const renderNewJoke = async function () {
   // construct activity card here with the response
   constructJokeCard(newJoke);
 };
-
-renderNewJoke();
 
 // Add Dollar Sign to activity.price.
 const constructActivityCard = function (activity) {
@@ -201,9 +190,18 @@ const constructActivityCard = function (activity) {
     </footer>
   </div>
 </div>`;
+  jokeContainer.empty();
   activityParent.empty();
   activityParent.append(activityCard);
 };
 
 choicesContainer.on("click", handleSelectedChoice);
 cardContainer.on("click", handleUserChoices);
+
+const onLoad = function () {
+  renderClock();
+
+  renderNewJoke();
+};
+
+onLoad();
