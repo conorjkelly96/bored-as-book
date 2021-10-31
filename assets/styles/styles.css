@@ -47,8 +47,12 @@ main {
 
 .category-btn {
   margin-top: 10px;
-  background-color: var(--flickr-pink);
+  background-color: coral;
   color: white;
+}
+
+.category-btn:hover {
+  color: var(--flickr-pink);
 }
 
 .form-input {
