@@ -1,15 +1,24 @@
 const choicesContainer = $("#choices-container");
 const cardContainer = $("#card-container");
-const baseURL = "https://www.boredapi.com";
+// Bored-API base url
+const boredBaseURL = "https://www.boredapi.com";
+// Dad-Joke-API base url
+const dadJokeBaseUrl =
+  "https://dad-jokes.p.rapidapi.com/random/joke?=&nsfw=false";
 
-// Using object Mapping to display categories on activity card
-const categoryMapper = {
-  social: "Social",
-  recreational: "Recreational",
-  music: "Music",
-  education: "Education",
-  relaxation: "Relaxation",
-};
+fetch(dadJokeBaseUrl, {
+  method: "GET",
+  headers: {
+    "x-rapidapi-host": "dad-jokes.p.rapidapi.com",
+    "x-rapidapi-key": "bc1d02851emsh853dc79af4fea2cp1e4839jsned8c0b9e23af",
+  },
+})
+  .then((response) => {
+    console.log(response);
+  })
+  .catch((err) => {
+    console.error(err);
+  });
 
 // to store api data
 let choiceData;
@@ -33,8 +42,8 @@ const getApiCall = async function (url) {
 const renderActivityCard = async function (categorySelected) {
   const url =
     categorySelected === "random"
-      ? `${baseURL}/api/activity`
-      : `${baseURL}/api/activity?type=${categorySelected}`;
+      ? `${boredBaseURL}/api/activity`
+      : `${boredBaseURL}/api/activity?type=${categorySelected}`;
   choiceData = await getApiCall(url);
   constructActivityCard(choiceData);
 };
