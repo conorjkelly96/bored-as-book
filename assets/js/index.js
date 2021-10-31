@@ -173,11 +173,6 @@ const constructActivityCard = function (activity) {
         <p class="subtitle is-6">${capitalizeFirstLetter(activity.type)}</p>
       </div>
     </div>
-    <div class="content">
-      <div class="is-size-7">Added on: ${moment(activity.timeStamp).format(
-        "ddd Do MMM, YYYY"
-      )}</div>
-    </div>
     <footer class="card-footer pt-4">
     <button data-choice="no" id="no-btn" class="card-footer-item button is-danger" data-category=${
       activity.type
