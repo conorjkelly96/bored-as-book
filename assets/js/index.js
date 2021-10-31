@@ -90,7 +90,7 @@ const handleUserChoices = async function (event) {
   }
 };
 
-// Add Dollar Sign to activity.price
+// Add Dollar Sign to activity.price.
 const constructActivityCard = function (activity) {
   const activityParent = $("#card-container");
 
