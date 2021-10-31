@@ -5,7 +5,7 @@ const query = "Manchester";
 
 const settings = {
   headers: {
-    "x-rapidapi-host": `"${BASE_URL}"`,
+    "x-rapidapi-host": "contextualwebsearch-websearch-v1.p.rapidapi.com",
     "x-rapidapi-key": `"${API_KEY}""`,
   },
 };
@@ -22,20 +22,6 @@ const fetchDataFromApi = async function (url, settings = {}) {
   } catch (error) {
     console.log(error);
   }
-};
-
-const constructSearchResults = function (results) {
-  const searchParent = $("#search-container");
-
-  const searchResults = `<div class="tile is-child box">
-  <p class="title">${results.title}</p>
-  <p>
-  ${results.description}
-  </p>
-  <a>${results.url}</a>
-  </div>`;
-  //searchParent.empty();
-  searchParent.append(searchResults);
 };
 
 const constructSearchActivity = function (results) {
@@ -55,8 +41,7 @@ const constructSearchActivity = function (results) {
 };
 
 const handleActivitySelection = async () => {
-  const url = `${BASE_URL}/api/Search/WebSearchAPI?q=${query}&pageNumber=1&pageSize=10&autoCorrect=true&safeSearch=true`;
-  console.log(url);
+  const url = `${BASE_URL}/api/Search/WebSearchAPI?q=Manchester&pageNumber=1&pageSize=10&autoCorrect=true&safeSearch=true`;
   const searchResults = await fetchDataFromApi(url, settings);
   console.log(searchResults);
   const suggestedActivity = searchResults || [];
@@ -64,4 +49,8 @@ const handleActivitySelection = async () => {
   constructSearchActivity(suggestedActivity.value);
 };
 
-handleActivitySelection();
+const onReady = function () {
+  handleActivitySelection();
+};
+
+$(document).ready(onReady);
