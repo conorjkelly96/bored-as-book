@@ -121,6 +121,36 @@ const capitalizeFirstLetter = function (string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 };
 
+// constructingJokeCard for every time a joke loads
+const constructJokeCard = function (joke) {
+  const jokeContainer = $("#joke-container");
+
+  const jokeCard = `<div class="card mt-6">
+    <header class="card-header">
+      <p class="card-header-title">
+        The time is bored o'clock: 11:09 PM - 1 Jan 2016
+      </p>
+    </header>
+    <div class="card-content">
+      <div class="content">
+        <p>What did one wall say to the other wall?</p>
+        <p>I'll meet you at the corner!</p>
+      </div>
+    </div>
+    <footer class="card-footer">
+      <button
+        id="new-joke-btn"
+        class="card-footer-item button is-success"
+      >
+        New Joke
+      </button>
+    </footer>
+  </div>`;
+
+  jokeContainer.empty();
+  jokeContainer.append(jokeCard);
+};
+
 // Add Dollar Sign to activity.price.
 const constructActivityCard = function (activity) {
   const activityParent = $("#card-container");
