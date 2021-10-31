@@ -1,6 +1,8 @@
 const choicesContainer = $("#choices-container");
 const cardContainer = $("#card-container");
 const jokeContainer = $("#joke-container");
+const modalContainer = $("#modal-container");
+
 // Bored-API base url
 const boredBaseURL = "https://www.boredapi.com";
 // Dad-Joke-API base url
@@ -198,32 +200,36 @@ choicesContainer.on("click", handleSelectedChoice);
 cardContainer.on("click", handleUserChoices);
 
 const renderModal = function () {
-  const mainContainer = $("#main-container");
-  console.log(mainContainer);
-
   const loadModal = `<div class="container" id="app">
-  <div class="modal">
+  <div id="modal-div" class="modal is-active">
     <div class="modal-background"></div>
     <div class="modal-content">
-      <!-- Any other Bulma elements you want -->
-      <p class="has-text-centered is white">
+      <p class="has-text-centered has-text-white">
         Welcome to Bored as Book! A place to find new things to do, joke
         around and waste time
       </p>
-      <p class="has-text-centered is white">
+      <p class="has-text-centered has-text-white">
         Don't be boring... close the window to start the fun!
       </p>
     </div>
-    <button class="modal-close"></button>
+    <button id="modal-close" class="modal-close"></button>
   </div>
   </div>`;
-
-  mainContainer.append(loadModal);
+  modalContainer.append(loadModal);
 };
 
-$(".modal-close").click(function () {
-  $(".modal").removeClass("is-active");
-});
+const closeModal = function (event) {
+  const target = $(event.target);
+  const currentTarget = $(event.currentTarget);
+  const modalDiv = $("#modal-div");
+
+  if (target.is("button")) {
+    console.log("correct");
+    modalDiv.removeClass("is-active");
+  }
+};
+
+modalContainer.on("click", closeModal);
 
 const onLoad = function () {
   renderModal();
