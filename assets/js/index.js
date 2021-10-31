@@ -187,8 +187,31 @@ const constructActivityCard = function (activity) {
     </footer>
   </div>
 </div>`;
+
   activityParent.empty();
   activityParent.append(activityCard);
+};
+
+const renderAlert = function (event) {
+  const target = $(event.target);
+
+  const yesAlert = `<div class="notification is-primary">
+  <button class="delete"></button>
+  Hey! Look who's not boring now!
+  </div>`;
+
+  const noAlert = `<div class="notification is-danger">
+  <button class="delete"></button>
+  You're seriously boring...
+  </div>`;
+
+  if (target.data("choice") === "yes") {
+    //if the user selects YES to an activity, then display the yesAlert
+    cardContainer.append(yesAlert);
+  } else {
+    //if the user selects NO to an activity, then display the noAlert
+    cardContainer.append(noAlert);
+  }
 };
 
 choicesContainer.on("click", handleSelectedChoice);
