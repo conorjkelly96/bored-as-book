@@ -225,7 +225,7 @@ const renderModal = function () {
     <div class="modal-background"></div>
     <div class="modal-content">
       <p class="title has-text-centered has-text-white">
-        Welcome to Bored as Book! A place to find new things to do, joke
+        Welcome to Bored as Book! A place to explore new interests, joke
         around and waste time &#128526;
       </p>
       <p class="title has-text-centered has-text-white">
