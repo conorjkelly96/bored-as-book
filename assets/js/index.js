@@ -90,17 +90,34 @@ const handleUserChoices = async function (event) {
   }
 };
 
+const getPriceElement = function (price) {
+  if (price > 0) {
+    return `<div class="media-left">
+      <div class="icon pay-icon">
+        <i class="fas fa-dollar-sign"></i>
+      </div>
+    </div>`;
+  }
+  return "";
+};
+
+const capitalizeFirstLetter = function (string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};
+
 // Add Dollar Sign to activity.price.
 const constructActivityCard = function (activity) {
   const activityParent = $("#card-container");
+  const activityChoice = activity[activity];
+  console.log(activityChoice);
 
   const activityCard = `<div class="card activity-card">
   <div class="card-content">
     <div class="media">
-       ${activity.price}
+       ${getPriceElement(activity.price)}
       <div class="media-content">
         <p class="title is-4">${activity.activity}</p>
-        <p class="subtitle is-6">${activity.type}</p>
+        <p class="subtitle is-6">${capitalizeFirstLetter(activity.type)}</p>
       </div>
     </div>
     <div class="content">
