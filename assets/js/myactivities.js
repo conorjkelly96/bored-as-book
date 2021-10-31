@@ -6,7 +6,7 @@ const categoryMapper = {
   education: "Education",
   relaxation: "Relaxation",
 };
-
+const modalContainer = $("#modal-container");
 // All categories container
 const allCategoriesContainer = $("#all-categories");
 
@@ -83,9 +83,37 @@ const constructUserChoices = function (userChoices) {
   selectedUserChoices.forEach(renderCategory);
 };
 
+const clearLS = function (event) {
+  alert(
+    "Doing this will remove all the fun activities you've saved, are you sure you want to continue?"
+  );
+  localStorage.clear();
+  window.location.reload();
+};
+
+const renderNoActivitiesModal = function () {
+  if (localStorage.getItem("myActivities") === null) {
+    const modalMessage = `<div class="container" id="app">
+      <div id="modal-div" class="modal is-active">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+          <p class="title has-text-centered has-text-white">
+            You do not have any activities! Go back to <a href="./index.html">the homepage</a>to become less boring!
+          </p>
+
+        </div>
+        <button id="modal-close" class="modal-close"></button>
+      </div>
+      </div>`;
+    modalContainer.append(modalMessage);
+  }
+};
+
 const onReady = function () {
   const userChoices = JSON.parse(localStorage.getItem("myActivities")) ?? {};
+  renderNoActivitiesModal();
   constructUserChoices(userChoices);
 };
 
 $(document).ready(onReady);
+$("#clear-ls").click(clearLS);
