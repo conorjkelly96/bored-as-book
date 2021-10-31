@@ -190,7 +190,6 @@ const constructActivityCard = function (activity) {
     </footer>
   </div>
 </div>`;
-  jokeContainer.empty();
   activityParent.empty();
   activityParent.append(activityCard);
 };
@@ -198,7 +197,37 @@ const constructActivityCard = function (activity) {
 choicesContainer.on("click", handleSelectedChoice);
 cardContainer.on("click", handleUserChoices);
 
+const renderModal = function () {
+  const mainContainer = $("#main-container");
+  console.log(mainContainer);
+
+  const loadModal = `<div class="container" id="app">
+  <div class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <!-- Any other Bulma elements you want -->
+      <p class="has-text-centered is white">
+        Welcome to Bored as Book! A place to find new things to do, joke
+        around and waste time
+      </p>
+      <p class="has-text-centered is white">
+        Don't be boring... close the window to start the fun!
+      </p>
+    </div>
+    <button class="modal-close"></button>
+  </div>
+  </div>`;
+
+  mainContainer.append(loadModal);
+};
+
+$(".modal-close").click(function () {
+  $(".modal").removeClass("is-active");
+});
+
 const onLoad = function () {
+  renderModal();
+
   renderClock();
 
   renderNewJoke();
