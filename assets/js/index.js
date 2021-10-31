@@ -69,9 +69,10 @@ const handleUserChoices = async function (event) {
   const target = $(event.target);
 
   if (target.data("choice") === "yes") {
-    // get data from local storage
-    renderAlert();
+    // Render Alert depending on user choice - CK - not currently working
+    // renderAlert();
 
+    // get data from local storage
     const myActivities = JSON.parse(localStorage.getItem("myActivities")) ?? {};
 
     // get the category
@@ -130,10 +131,6 @@ const renderNewJoke = async function () {
 
   // constructingJokeCard for every time a joke loads
   const constructJokeCard = function (joke) {
-    console.log(joke.body[0].punchline);
-    const jokeObject = Object.keys(joke);
-    console.log(jokeObject);
-
     const jokeCard = `<div class="card mt-6">
       <header class="card-header has-text-centre">
       <p class="card-header-title"> Bored O'Clock:<span class="card-header-title" id="clock">
