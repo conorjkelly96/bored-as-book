@@ -21,8 +21,24 @@ body {
   height: 100vh;
 }
 
-html {
-  background-image: url(/bored-as-book/assets/images/start-digital-4utnKVmVQR8-unsplash.jpg);
+#main-page {
+  background-image: url(../images/start-digital.jpg);
+  background-size: 1000px;
+}
+
+#about-us {
+  background-image: url(../images/bg-image-bored-as-book.jpg);
+  background-size: 2000px;
+  
+}
+
+#my-activities {
+  background-image: url(../images/bubblesplash.jpg);
+  background-size: 1000px;
+}
+
+#seacrh-results {
+  background-image: url(../images/alexanderart.jpg);
   background-size: 1000px;
 }
 
