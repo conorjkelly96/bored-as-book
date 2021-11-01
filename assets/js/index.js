@@ -232,7 +232,6 @@ const renderModal = function () {
 // function to close the modal which renders on window load
 const closeModal = function (event) {
   const target = $(event.target);
-  const currentTarget = $(event.currentTarget);
   const modalDiv = $("#modal-div");
 
   // the "is-active" class ensures a modal is displayed - needs to be removed to close the modal
