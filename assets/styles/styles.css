@@ -24,22 +24,41 @@ body {
 #main-page {
   background-image: url(../images/start-digital.jpg);
   background-size: 1000px;
+  background-attachment: fixed;
+  background-size: cover;                     
+  background-repeat: no-repeat;
+  background-position: center center;   
+
 }
 
 #about-us {
   background-image: url(..//images/alexanderart.jpg);
-  background-size: 2000px;
-  
+  background-size: 1000px;
+  background-attachment: fixed;
+  background-size: cover;                     
+  background-repeat: no-repeat;
+  background-position: center center;   
+    
 }
 
 #my-activities {
   background-image: url(../images/bubblesplash.jpg);
   background-size: 1000px;
+  background-attachment: fixed;
+  background-size: cover;                     
+  background-repeat: no-repeat;
+  background-position: center center;   
+
 }
 
 #seacrh-results {
   background-image: url(../images/alexanderart.jpg);
   background-size: 1000px;
+  background-attachment: fixed;
+  background-size: cover;                     
+  background-repeat: no-repeat;
+  background-position: center center;   
+
 }
 
 main {
