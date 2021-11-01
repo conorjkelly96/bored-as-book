@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Activities</title>
+    <!-- font-awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
@@ -12,6 +12,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- bulma css framework -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css"
@@ -19,7 +20,16 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- google-fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!--custom-style css-->
     <link rel="stylesheet" href="./assets/styles/styles.css" />
+    <title>ABOUT US</title>
   </head>
   <body>
     <header>
@@ -42,19 +52,6 @@
         </div>
       </nav>
     </header>
-
-    <main>
-      <div id="modal-container"></div>
-      <!--Activity Cards -->
-
-      <section class="category-parent" id="all-categories"></section>
-      <div class="buttons is-flex-direction-row is-justify-content-center m-5">
-        <button id="clear-ls" class="button is-danger">
-          Remove All Activities
-        </button>
-      </div>
-    </main>
-
     <footer class="footer is-transparent">
       <div class="logo-container" id="logo-container">
         <img src="./assets/images/gifs/bored-as-showreel.gif" />
@@ -80,6 +77,5 @@
       referrerpolicy="no-referrer"
     ></script>
     <script src="./assets/js/nav.js"></script>
-    <script src="./assets/js/myactivities.js"></script>
   </body>
 </html>

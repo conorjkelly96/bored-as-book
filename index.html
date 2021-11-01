@@ -46,9 +46,9 @@
 
         <div id="app-navbar" class="navbar-menu">
           <div class="navbar-end">
-            <a class="navbar-item" href="#">Home</a>
-            <a class="navbar-item" href="#">My Activities</a>
-            <a class="navbar-item" href="#">About Us</a>
+            <a class="navbar-item" href="./index.html">Home</a>
+            <a class="navbar-item" href="./myactivities.html">My Activities</a>
+            <a class="navbar-item" href="./aboutus.html">About Us</a>
           </div>
         </div>
       </nav>
@@ -56,77 +56,67 @@
 
     <!-- main container - this will contain all cards on the landing page -->
     <main class="container" id="main-container">
-      <div class="title-text tile is-ancestor">
-        <div class="tile is-parent">
-          <div class="tile is-child box">
-            <p class="title" id="title">
-              Let The Universe Decide Your Day.....
-            </p>
-          </div>
-        </div>
-      </div>
+      <div id="modal-container"></div>
+      <div id="joke-container"></div>
 
       <!-- User Input here -->
 
-      <div id="card-container"></div>
+      <div id="card-container" class="card-container">
+        <div id="notification-container" class="notification-container"></div>
+      </div>
 
       <div class="choices-container" id="choices-container">
         <div class="buttons-container ml-3 mr-3">
           <button
             data-category="social"
-            class="category-btn button is-large is-fullwidth is-link"
+            class="category-btn button is-large is-fullwidth"
           >
             Social
           </button>
           <button
             data-category="education"
-            class="category-btn button is-large is-fullwidth is-link"
+            class="category-btn button is-large is-fullwidth"
           >
             Educational
           </button>
           <button
             data-category="recreational"
-            class="category-btn button is-large is-fullwidth is-link"
+            class="category-btn button is-large is-fullwidth"
           >
             Recreational
           </button>
           <button
             data-category="relaxation"
-            class="category-btn button is-large is-fullwidth is-link"
+            class="category-btn button is-large is-fullwidth"
           >
             Relaxation
           </button>
           <button
             data-category="music"
-            class="category-btn button is-large is-fullwidth is-link"
+            class="category-btn button is-large is-fullwidth"
           >
             Music
           </button>
           <button
             data-category="random"
-            class="category-btn button is-large is-fullwidth is-link"
+            class="category-btn button is-large is-fullwidth"
           >
             Random
           </button>
         </div>
       </div>
-
-      <!-- <div
-        class="return-btn-container ml-3 mr-3 mt-6 column"
-        id="return-btn-container"
-      >
-        <button
-          class="category-btn button is-large is-fullwidth is-link"
-          id="return-btn"
-        >
-          Return to Main
-        </button>
-      </div> -->
     </main>
 
     <footer class="footer">
+      <div class="logo-container" id="logo-container">
+        <img src="./assets/images/gifs/bored-as-showreel.gif" />
+      </div>
       <div class="content has-text-centered">
-        <p><strong>Bored As Book!</strong> &copy; 2021</p>
+        <p>
+          <strong>Bored As Book made by </strong>
+          <!-- Need to add link to aboutus.html -->
+          <a href="./aboutus.html">a bunch of boring losers</a>.
+        </p>
       </div>
     </footer>
 
@@ -139,7 +129,14 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+      integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <!-- custom js -->
+    <script src="./assets/js/nav.js"></script>
     <script src="./assets/js/index.js"></script>
   </body>
 </html>

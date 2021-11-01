@@ -41,5 +41,11 @@ Button container for if the user is able to select multiple categories.
     </button>
   </div>
 </div>
-```
+
+```javascript const saveData = function (event) { if
+($(event.target).is("button")) { const timeOfEvent = $(event.target).attr("id");
+const userInput = $(event.target).prev().val(); const dataFromLocalStorage =
+JSON.parse( localStorage.getItem("activitiesByHour") );
+dataFromLocalStorage[timeOfEvent] = userInput; localStorage.setItem(
+"activitiesByHour", JSON.stringify(dataFromLocalStorage) ); } };
 ````

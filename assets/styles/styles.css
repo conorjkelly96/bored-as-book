@@ -22,15 +22,17 @@ body {
 }
 
 html {
-  background-image: url(../images/bg-image-bored-as-book.jpg);
-  background-attachment: fixed;
-  background-size: cover;                     
-  background-repeat: no-repeat;
-  background-position: center center;   
+  background-image: url(/bored-as-book/assets/images/start-digital-4utnKVmVQR8-unsplash.jpg);
+  background-size: 1000px;
 }
 
 main {
   min-height: 80vh;
+}
+
+.modal-background {
+  background-color: coral;
+  opacity: 0.75;
 }
 
 .logo {
@@ -50,6 +52,12 @@ main {
 
 .category-btn {
   margin-top: 10px;
+  background-color: coral;
+  color: white;
+}
+
+.category-btn:hover {
+  color: var(--flickr-pink);
 }
 
 .form-input {
@@ -76,13 +84,16 @@ main {
   margin-top: 80px !important;
 }
 
+.card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 /* Overwriting BULMA padding on input div */
 .input-div {
   padding: 0px;
-}
-
-.card-content {
-  text-align: center;
 }
 
 /* overwriting activity text  */
@@ -94,6 +105,45 @@ main {
   font-style: italic;
 }
 
+/* CSS Styling for the Cards on My Activity page */
+.cards-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.card-content {
+  text-align: center;
+}
+
+.card-category {
+  padding: 20px;
+  text-align: center;
+}
+
+.activity-card {
+  width: 16rem;
+  margin: 20px;
+}
+
+.pay-icon {
+  color: yellow;
+  background-color: black;
+  border-radius: 100%;
+}
+
+.logo-container {
+  text-align: center;
+}
+
+.notification-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/* For Mobile View Ports */
 @media only screen and (max-width: 768px) {
   #search-list {
     display: flex;
