@@ -2,6 +2,7 @@ const choicesContainer = $("#choices-container");
 const cardContainer = $("#card-container");
 const jokeContainer = $("#joke-container");
 const modalContainer = $("#modal-container");
+const notificationContainer = $("#notification-container");
 
 // Bored-API base url
 const boredBaseURL = "https://www.boredapi.com";
@@ -70,7 +71,6 @@ const handleUserChoices = async function (event) {
 
   if (target.data("choice") === "yes") {
     // Render Alert depending on user choice - CK - not currently working
-    // renderAlert();
 
     // get data from local storage
     const myActivities = JSON.parse(localStorage.getItem("myActivities")) ?? {};
@@ -105,9 +105,9 @@ const handleUserChoices = async function (event) {
 const getPriceElement = function (price) {
   if (price > 0) {
     return `<div class="media-left">
-      <div class="icon pay-icon">
-        <i class="fas fa-dollar-sign"></i>
-      </div>
+    <div class="icon pay-icon">
+    <i class="fas fa-dollar-sign"></i>
+    </div>
     </div>`;
   }
   return "";
@@ -132,18 +132,18 @@ const renderNewJoke = async function () {
   // constructingJokeCard for every time a joke loads
   const constructJokeCard = function (joke) {
     const jokeCard = `<div class="card mt-6">
-      <header class="card-header has-text-centre">
-      <p class="card-header-title"> Bored O'Clock:<span class="card-header-title" id="clock">
-      </span>
-      </p>
-        
-      </header>
-      <div class="card-content">
-        <div class="content">
-          <p>${joke.body[0].setup}</p>
-          <p>${joke.body[0].punchline}</p>
-        </div>
-      </div>
+    <header class="card-header has-text-centre">
+    <p class="card-header-title"> Bored O'Clock:<span class="card-header-title" id="clock">
+    </span>
+    </p>
+    
+    </header>
+    <div class="card-content">
+    <div class="content">
+    <p>${joke.body[0].setup}</p>
+    <p>${joke.body[0].punchline}</p>
+    </div>
+    </div>
     </div>`;
 
     jokeContainer.empty();
@@ -157,7 +157,7 @@ const renderNewJoke = async function () {
 const constructActivityCard = function (activity) {
   const activityCard = `<div class="card activity-card">
   <div class="card-content">
-    <div class="media">
+  <div class="media">
        ${getPriceElement(activity.price)}
       <div class="media-content">
         <p class="title is-4">${activity.activity}</p>
@@ -187,63 +187,35 @@ const constructActivityCard = function (activity) {
 const renderAlert = function (event) {
   const target = $(event.target);
   console.log(target);
+  const currentTarget = $(event.currentTarget);
+  console.log(currentTarget);
 
-  const yesAlert = `<div class="notification is-primary">
-  <button class="delete"></button>
+  const yesAlert = `<div class="notification is-primary m-3">
   Hey! Look who's not boring now!
   </div>`;
 
-  const noAlert = `<div class="notification is-danger">
-  <button class="delete"></button>
+  const noAlert = `<div class="notification is-danger m-3">
   You're seriously boring...
   </div>`;
 
   if (target.data("choice") === "yes") {
     //if the user selects YES to an activity, then display the yesAlert
     console.log("yes");
-    $("#notification-container").append(yesAlert);
+    notificationContainer.empty();
+    notificationContainer.append(yesAlert);
   } else {
     //if the user selects NO to an activity, then display the noAlert
     console.log("no");
-    $("#notification-container").append(noAlert);
+    notificationContainer.empty();
+    notificationContainer.append(noAlert);
   }
 };
 
 choicesContainer.on("click", handleSelectedChoice);
 cardContainer.on("click", handleUserChoices);
+cardContainer.on("click", renderAlert);
 
-const renderModal = function () {
-  const loadModal = `<div class="container" id="app">
-  <div id="modal-div" class="modal is-active">
-    <div class="modal-background"></div>
-    <div class="modal-content">
-      <p class="title has-text-centered has-text-white">
-        Welcome to Bored as Book! A place to explore new interests, joke
-        around and waste time &#128526;
-      </p>
-      <p class="title has-text-centered has-text-white">
-        Don't be boring... close the window to start the fun! &#128527; 
-      </p>
-    </div>
-    <button id="modal-close" class="modal-close"></button>
-  </div>
-  </div>`;
-  modalContainer.append(loadModal);
-};
-
-const closeModal = function (event) {
-  const target = $(event.target);
-  const currentTarget = $(event.currentTarget);
-  const modalDiv = $("#modal-div");
-
-  if (target.is("button")) {
-    modalDiv.removeClass("is-active");
-  }
-};
-
-modalContainer.on("click", closeModal);
-
-const closeNotification = function (event) {
+const closeAlert = function (event) {
   const target = $(event.target);
   document.addEventListener("DOMContentLoaded", () => {
     (document.querySelectorAll(".notification .delete") || []).forEach(
@@ -258,6 +230,39 @@ const closeNotification = function (event) {
   });
 };
 
+notificationContainer.on("click", closeAlert);
+
+// function to render the modal which renders on window load
+const renderModal = function () {
+  const loadModal = `<div id="modal-div" class="modal is-active">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Welcome to Bored-As-Book!</p>
+      </header>
+      <section class="modal-card-body">
+      <p class="subtitle">Bored and fancy a random dad joke? &#128104; Looking to get inspiration for your next activity? &#128758; Want a place to browse the web on a bunch of random suggestions, all in one place? &#129337;</p>
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-success">Start the fun!</button>
+      </footer>
+    </div>
+  </div>`;
+  modalContainer.append(loadModal);
+};
+
+// function to close the modal which renders on window load
+const closeModal = function (event) {
+  const target = $(event.target);
+  const currentTarget = $(event.currentTarget);
+  const modalDiv = $("#modal-div");
+
+  // the "is-active" class ensures a modal is displayed - needs to be removed to close the modal
+  if (target.is("button")) {
+    modalDiv.removeClass("is-active");
+  }
+};
+
 modalContainer.on("click", closeModal);
 
 const onLoad = function () {
@@ -268,4 +273,5 @@ const onLoad = function () {
   renderNewJoke();
 };
 
-onLoad();
+$(window).on("load", onLoad);
+modalContainer.on("click", closeModal);
