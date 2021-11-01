@@ -17,6 +17,8 @@ const settings = {
     "x-rapidapi-key": "bc1d02851emsh853dc79af4fea2cp1e4839jsned8c0b9e23af",
   },
 };
+// to store api data
+let choiceData;
 
 // fetching joke from Dad Joke api
 const fetchDataFromApi = async function (url, settings = {}) {
@@ -26,9 +28,6 @@ const fetchDataFromApi = async function (url, settings = {}) {
     return data;
   } catch (error) {}
 };
-
-// to store api data
-let choiceData;
 
 const resetChoicesCSS = function (buttons) {
   const removeSuccessClass = function (buttonOption) {
