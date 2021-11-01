@@ -186,9 +186,7 @@ const constructActivityCard = function (activity) {
 // Rendering alert depending on user choice
 const renderAlert = function (event) {
   const target = $(event.target);
-  console.log(target);
   const currentTarget = $(event.currentTarget);
-  console.log(currentTarget);
 
   const yesAlert = `<div class="notification is-primary m-3">
   Hey! Look who's not boring now!
@@ -200,12 +198,10 @@ const renderAlert = function (event) {
 
   if (target.data("choice") === "yes") {
     //if the user selects YES to an activity, then display the yesAlert
-    console.log("yes");
     notificationContainer.empty();
     notificationContainer.append(yesAlert);
   } else {
     //if the user selects NO to an activity, then display the noAlert
-    console.log("no");
     notificationContainer.empty();
     notificationContainer.append(noAlert);
   }
