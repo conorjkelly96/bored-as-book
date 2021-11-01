@@ -211,23 +211,6 @@ choicesContainer.on("click", handleSelectedChoice);
 cardContainer.on("click", handleUserChoices);
 cardContainer.on("click", renderAlert);
 
-const closeAlert = function (event) {
-  const target = $(event.target);
-  document.addEventListener("DOMContentLoaded", () => {
-    (document.querySelectorAll(".notification .delete") || []).forEach(
-      ($delete) => {
-        const $notification = $delete.parentNode;
-
-        $delete.addEventListener("click", () => {
-          $notification.parentNode.removeChild($notification);
-        });
-      }
-    );
-  });
-};
-
-notificationContainer.on("click", closeAlert);
-
 // function to render the modal which renders on window load
 const renderModal = function () {
   const loadModal = `<div id="modal-div" class="modal is-active">
