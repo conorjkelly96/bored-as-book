@@ -45,6 +45,10 @@ main {
   justify-content: center;
 }
 
+.navbar-item {
+  text-align: center;
+}
+
 #tile {
   text-align: center;
   margin: 20px;
@@ -63,6 +67,17 @@ main {
 
 .category-btn:hover {
   color: var(--flickr-pink);
+}
+
+/* icon for activity buttons */
+.fas {
+  color: yellow;
+  background-color: black;
+  border-radius: 5px;
+}
+
+.activity-text {
+  margin-right: 30px;
 }
 
 .form-input {
