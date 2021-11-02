@@ -61,7 +61,10 @@ const constructUserChoices = function (userChoices) {
             <button class="card-footer-item button is-info m-1">
               View
             </button>
-            <button class="card-footer-item button is-danger m-1">
+            <button class="card-footer-item button is-danger m-1 delete-btn"
+            data-key="${choice.key}"
+             data-category ="${category}"
+             >
               Delete
             </button>
           </footer>
@@ -83,12 +86,44 @@ const constructUserChoices = function (userChoices) {
 };
 
 const clearLS = function () {
-  alert(
-    "Doing this will remove all the fun activities you've saved, are you sure you want to continue?"
-  );
-  localStorage.clear();
-  window.location.reload();
+  const loadModal = `<div id="modal-div" class="modal is-active">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Are you sure??</p>
+      </header>
+      <section class="modal-card-body">
+      <p class="subtitle">Doing this will remove all the fun activities you've saved, are you sure you want to continue?</p>
+      </section>
+      <footer class="modal-card-foot">
+        
+        <button class="button is-success" id="confirm-delete">Confirm</button>
+        <button class="button is-danger" id="cancel-delete">Cancel</button>
+        
+      </footer>
+    </div>
+  </div>`;
+  modalContainer.append(loadModal);
 };
+
+const closeModal = function (event) {
+  const target = $(event.target);
+  // const currentTarget = $(event.currentTarget);
+  const modalDiv = $("#modal-div");
+
+  if (target.is("#cancel-delete")) {
+    modalDiv.removeClass("is-active");
+  }
+
+  if (target.is("#confirm-delete")) {
+    localStorage.clear();
+    modalDiv.removeClass("is-active");
+    console.log("confirm");
+    window.location.reload();
+  }
+};
+
+modalContainer.on("click", closeModal);
 
 const renderNoActivitiesModal = function () {
   if (localStorage.getItem("myActivities") === null) {
@@ -107,10 +142,32 @@ const renderNoActivitiesModal = function () {
   }
 };
 
+const deleteActivity = function (event) {
+  const activityData = JSON.parse(localStorage.getItem("myActivities")) || {};
+
+  const category = $(event.target).data("category");
+  const categoryData = activityData[category];
+  const key = $(event.target).data("key");
+  const categoryArray = [];
+
+  categoryData.forEach((item) => {
+    if (key !== Number(item.key)) {
+      categoryArray.push(item);
+    }
+  });
+
+  activityData[category] = categoryArray;
+
+  localStorage.setItem("myActivities", JSON.stringify(activityData));
+
+  window.location.reload();
+};
+
 const onReady = function () {
   const userChoices = JSON.parse(localStorage.getItem("myActivities")) ?? {};
   renderNoActivitiesModal();
   constructUserChoices(userChoices);
+  $(".delete-btn").click(deleteActivity);
 };
 
 $(document).ready(onReady);

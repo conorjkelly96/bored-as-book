@@ -52,7 +52,8 @@ const handleSelectedChoice = async function (event) {
   const target = $(event.target);
   const currentTarget = $(event.currentTarget);
 
-  if (target.is("button")) {
+  if (target.is("button") || target.is("i")) {
+    console.log("hi");
     // reset the selected button
     resetChoicesCSS([...currentTarget.find("button")]);
 
