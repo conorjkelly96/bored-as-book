@@ -21,9 +21,44 @@ body {
   height: 100vh;
 }
 
-html {
-  background-image: url(../images/start-digital-4utnKVmVQR8-unsplash.jpg);
+#main-page {
+  background-image: url(../images/start-digital.jpg);
   background-size: 1000px;
+  background-attachment: fixed;
+  background-size: cover;                     
+  background-repeat: no-repeat;
+  background-position: center center;   
+
+}
+
+#about-us {
+  background-image: url(..//images/alexanderart.jpg);
+  background-size: 1000px;
+  background-attachment: fixed;
+  background-size: cover;                     
+  background-repeat: no-repeat;
+  background-position: center center;   
+    
+}
+
+#my-activities {
+  background-image: url(../images/bubblesplash.jpg);
+  background-size: 1000px;
+  background-attachment: fixed;
+  background-size: cover;                     
+  background-repeat: no-repeat;
+  background-position: center center;   
+
+}
+
+#search-results {
+  background-image: url(../images/alexanderart.jpg);
+  background-size: 1000px;
+  background-attachment: fixed;
+  background-size: cover;                     
+  background-repeat: no-repeat;
+  background-position: center center;   
+
 }
 
 .book-logo {
