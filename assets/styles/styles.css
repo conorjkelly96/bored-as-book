@@ -22,8 +22,13 @@ body {
 }
 
 html {
-  background-image: url(/bored-as-book/assets/images/start-digital-4utnKVmVQR8-unsplash.jpg);
+  background-image: url(../images/start-digital-4utnKVmVQR8-unsplash.jpg);
   background-size: 1000px;
+}
+
+.book-logo {
+  width: 25%;
+  height: auto;
 }
 
 main {
@@ -38,6 +43,10 @@ main {
 .logo {
   align-items: center;
   justify-content: center;
+}
+
+.navbar-item {
+  text-align: center;
 }
 
 #tile {
@@ -58,6 +67,17 @@ main {
 
 .category-btn:hover {
   color: var(--flickr-pink);
+}
+
+/* icon for activity buttons */
+.pay-icon {
+  color: yellow;
+  background-color: black;
+  border-radius: 5px;
+}
+
+.activity-text {
+  margin-right: 30px;
 }
 
 .form-input {
@@ -164,5 +184,10 @@ main {
 
   .form-container {
     flex-direction: column;
+  }
+
+  .book-logo {
+    width: 10%;
+    height: auto;
   }
 }
