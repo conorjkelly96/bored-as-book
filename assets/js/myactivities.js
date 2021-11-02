@@ -85,17 +85,45 @@ const constructUserChoices = function (userChoices) {
   selectedUserChoices.forEach(renderCategory);
 };
 
-// const clearLS = function () {
-//   // alert(
-//   //   "Doing this will remove all the fun activities you've saved, are you sure you want to continue?"
-//   // );
+const clearLS = function () {
+  const loadModal = `<div id="modal-div" class="modal is-active">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Are you sure??</p>
+      </header>
+      <section class="modal-card-body">
+      <p class="subtitle">Doing this will remove all the fun activities you've saved, are you sure you want to continue?</p>
+      </section>
+      <footer class="modal-card-foot">
+        
+        <button class="button is-success" id="confirm-delete">Confirm</button>
+        <button class="button is-danger" id="cancel-delete">Cancel</button>
+        
+      </footer>
+    </div>
+  </div>`;
+  modalContainer.append(loadModal);
+};
 
-//   const answer = prompt("Do you want to remove all activities? yes/no ");
-//   if (answer.toLocaleLowerCase() === "yes") {
+const closeModal = function (event) {
+  const target = $(event.target);
+  // const currentTarget = $(event.currentTarget);
+  const modalDiv = $("#modal-div");
 
-//   localStorage.clear();
-//   window.location.reload();
-// };
+  if (target.is("#cancel-delete")) {
+    modalDiv.removeClass("is-active");
+  }
+
+  if (target.is("#confirm-delete")) {
+    localStorage.clear();
+    modalDiv.removeClass("is-active");
+    console.log("confirm");
+    window.location.reload();
+  }
+};
+
+modalContainer.on("click", closeModal);
 
 const renderNoActivitiesModal = function () {
   if (localStorage.getItem("myActivities") === null) {
