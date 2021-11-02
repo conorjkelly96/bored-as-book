@@ -116,14 +116,13 @@ const renderNoActivitiesModal = function () {
 
 const deleteActivity = function (event) {
   const activityData = JSON.parse(localStorage.getItem("myActivities")) || {};
-  console.log(activityData);
+
   const category = $(event.target).data("category");
   const categoryData = activityData[category];
   const key = $(event.target).data("key");
   const categoryArray = [];
 
   categoryData.forEach((item) => {
-    console.log(key, Number(item.key));
     if (key !== Number(item.key)) {
       categoryArray.push(item);
     }
@@ -131,15 +130,9 @@ const deleteActivity = function (event) {
 
   activityData[category] = categoryArray;
 
-  console.log(activityData);
-
   localStorage.setItem("myActivities", JSON.stringify(activityData));
 
   window.location.reload();
-
-  console.log($(event.target).data("key"));
-
-  console.log($(event.target).data("category"));
 };
 
 const onReady = function () {
