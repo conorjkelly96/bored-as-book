@@ -40,6 +40,10 @@ main {
   justify-content: center;
 }
 
+.navbar-item {
+  text-align: center;
+}
+
 #tile {
   text-align: center;
   margin: 20px;
