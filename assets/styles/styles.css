@@ -21,44 +21,14 @@ body {
   height: 100vh;
 }
 
-#main-page {
-  background-image: url(../images/start-digital.jpg);
+html {
+  background-image: url(../images/start-digital-4utnKVmVQR8-unsplash.jpg);
   background-size: 1000px;
-  background-attachment: fixed;
-  background-size: cover;                     
-  background-repeat: no-repeat;
-  background-position: center center;   
-
 }
 
-#about-us {
-  background-image: url(..//images/alexanderart.jpg);
-  background-size: 1000px;
-  background-attachment: fixed;
-  background-size: cover;                     
-  background-repeat: no-repeat;
-  background-position: center center;   
-    
-}
-
-#my-activities {
-  background-image: url(../images/bubblesplash.jpg);
-  background-size: 1000px;
-  background-attachment: fixed;
-  background-size: cover;                     
-  background-repeat: no-repeat;
-  background-position: center center;   
-
-}
-
-#seacrh-results {
-  background-image: url(../images/alexanderart.jpg);
-  background-size: 1000px;
-  background-attachment: fixed;
-  background-size: cover;                     
-  background-repeat: no-repeat;
-  background-position: center center;   
-
+.book-logo {
+  width: 25%;
+  height: auto;
 }
 
 main {
@@ -73,6 +43,10 @@ main {
 .logo {
   align-items: center;
   justify-content: center;
+}
+
+.navbar-item {
+  text-align: center;
 }
 
 #tile {
@@ -93,6 +67,17 @@ main {
 
 .category-btn:hover {
   color: var(--flickr-pink);
+}
+
+/* icon for activity buttons */
+.pay-icon {
+  color: yellow;
+  background-color: black;
+  border-radius: 5px;
+}
+
+.activity-text {
+  margin-right: 30px;
 }
 
 .form-input {
@@ -199,5 +184,10 @@ main {
 
   .form-container {
     flex-direction: column;
+  }
+
+  .book-logo {
+    width: 10%;
+    height: auto;
   }
 }
