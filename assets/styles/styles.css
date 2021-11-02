@@ -22,8 +22,13 @@ body {
 }
 
 html {
-  background-image: url(/bored-as-book/assets/images/start-digital-4utnKVmVQR8-unsplash.jpg);
+  background-image: url(../images/start-digital-4utnKVmVQR8-unsplash.jpg);
   background-size: 1000px;
+}
+
+.book-logo {
+  width: 25%;
+  height: auto;
 }
 
 main {
@@ -65,7 +70,7 @@ main {
 }
 
 /* icon for activity buttons */
-.fas {
+.pay-icon {
   color: yellow;
   background-color: black;
   border-radius: 5px;
@@ -179,5 +184,10 @@ main {
 
   .form-container {
     flex-direction: column;
+  }
+
+  .book-logo {
+    width: 10%;
+    height: auto;
   }
 }
