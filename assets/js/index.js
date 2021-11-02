@@ -45,6 +45,7 @@ const renderActivityCard = async function (categorySelected) {
       ? `${boredBaseURL}/api/activity`
       : `${boredBaseURL}/api/activity?type=${categorySelected}`;
   choiceData = await fetchDataFromApi(url);
+  notificationContainer.empty();
   constructActivityCard(choiceData);
 };
 
@@ -53,7 +54,6 @@ const handleSelectedChoice = async function (event) {
   const currentTarget = $(event.currentTarget);
 
   if (target.is("button") || target.is("i")) {
-    console.log("hi");
     // reset the selected button
     resetChoicesCSS([...currentTarget.find("button")]);
 
@@ -69,33 +69,37 @@ const handleSelectedChoice = async function (event) {
 const handleUserChoices = async function (event) {
   const target = $(event.target);
 
-  if (target.data("choice") === "yes") {
-    // Render Alert depending on user choice - CK - not currently working
-
-    // get data from local storage
-    const myActivities = JSON.parse(localStorage.getItem("myActivities")) ?? {};
-
-    // get the category
-    const category = target.data("category");
-
-    // get the category list
-    const activities = myActivities[category] ?? [];
-
-    // calculating current time
-    const timeStamp = moment();
-    choiceData.timeStamp = timeStamp;
-
-    // push the choice data in the list
-    activities.push(choiceData);
-
-    // set the list back in object
-    myActivities[category] = activities;
-
-    // store choice data in local storage
-    localStorage.setItem("myActivities", JSON.stringify(myActivities));
-  }
-
   if (target.is("button")) {
+    if (target.data("choice") === "yes") {
+      // Render Alert depending on user choice - CK - not currently working
+      renderAlert("yes");
+
+      // get data from local storage
+      const myActivities =
+        JSON.parse(localStorage.getItem("myActivities")) ?? {};
+
+      // get the category
+      const category = target.data("category");
+
+      // get the category list
+      const activities = myActivities[category] ?? [];
+
+      // calculating current time
+      const timeStamp = moment();
+      choiceData.timeStamp = timeStamp;
+
+      // push the choice data in the list
+      activities.push(choiceData);
+
+      // set the list back in object
+      myActivities[category] = activities;
+
+      // store choice data in local storage
+      localStorage.setItem("myActivities", JSON.stringify(myActivities));
+    } else {
+      renderAlert("no");
+    }
+
     // render the selected activity card
     const categorySelected = target.data("category");
     renderActivityCard(categorySelected);
@@ -184,10 +188,7 @@ const constructActivityCard = function (activity) {
 };
 
 // Rendering alert depending on user choice
-const renderAlert = function (event) {
-  const target = $(event.target);
-  const currentTarget = $(event.currentTarget);
-
+const renderAlert = function (decision) {
   const yesAlert = `<div class="notification is-primary m-3">
   Hey! Look who's not boring now!
   </div>`;
@@ -196,20 +197,12 @@ const renderAlert = function (event) {
   You're seriously boring...
   </div>`;
 
-  if (target.data("choice") === "yes") {
-    //if the user selects YES to an activity, then display the yesAlert
-    notificationContainer.empty();
-    notificationContainer.append(yesAlert);
-  } else {
-    //if the user selects NO to an activity, then display the noAlert
-    notificationContainer.empty();
-    notificationContainer.append(noAlert);
-  }
+  const alert = decision === "yes" ? yesAlert : noAlert;
+  notificationContainer.append(alert);
 };
 
 choicesContainer.on("click", handleSelectedChoice);
 cardContainer.on("click", handleUserChoices);
-cardContainer.on("click", renderAlert);
 
 // function to render the modal which renders on window load
 const renderModal = function () {

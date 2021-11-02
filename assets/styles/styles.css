@@ -155,20 +155,6 @@ main {
   justify-content: center;
 }
 
-/* Notification on selection of activity choice */
-@keyframes fadeout {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-/* css to fade the notification out */
-/* .notification {
-  animation: fadeout 4s;
-} */
-
 /* For Mobile View Ports */
 @media only screen and (max-width: 768px) {
   #search-list {
