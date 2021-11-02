@@ -8,6 +8,7 @@ const categoryMapper = {
 };
 const modalContainer = $("#modal-container");
 const allCategoriesContainer = $("#all-categories");
+const clearLocalStorageBtn = $("#clear-ls");
 
 const constructCategoryTitle = function (category) {
   return $(`<div class="card-category">
@@ -24,6 +25,44 @@ const getPriceElement = function (price) {
     </div>`;
   }
   return "";
+};
+
+const removeModal = function () {
+  $("#modal-div").remove();
+};
+
+const clearLocalStorage = function () {
+  localStorage.removeItem("myActivities");
+  removeModal();
+  renderAllCards();
+};
+
+const renderConfirmationModal = function () {
+  const confirmationModal = `<div id="modal-div" class="modal is-active">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Are you sure??</p>
+      </header>
+      <section class="modal-card-body">
+      <p class="subtitle">Doing this will remove all the fun activities you've saved, are you sure you want to continue?</p>
+      </section>
+      <footer class="modal-card-foot">
+        
+        <button class="button is-success" id="confirm-delete">Confirm</button>
+        <button class="button is-danger" id="cancel-delete">Cancel</button>
+        
+      </footer>
+    </div>
+  </div>`;
+
+  modalContainer.append(confirmationModal);
+
+  const modalCancelBtn = $("#cancel-delete");
+  const modalConfirmBtn = $("#confirm-delete");
+
+  modalCancelBtn.on("click", removeModal);
+  modalConfirmBtn.on("click", clearLocalStorage);
 };
 
 const constructUserChoices = function (userChoices) {
@@ -61,10 +100,9 @@ const constructUserChoices = function (userChoices) {
             <button class="card-footer-item button is-info m-1">
               View
             </button>
-            <button class="card-footer-item button is-danger m-1 delete-btn"
-            data-key="${choice.key}"
-             data-category ="${category}"
-             >
+            <button class="card-footer-item button is-danger m-1 delete-btn" data-key="${
+              choice.key
+            }" data-category ="${category}">
               Delete
             </button>
           </footer>
@@ -78,97 +116,66 @@ const constructUserChoices = function (userChoices) {
 
     parentContainer.append(categoryTitle);
     parentContainer.append(choicesContainer);
-
     allCategoriesContainer.append(parentContainer);
+    $(".delete-btn").on("click", deleteActivity);
   };
 
   selectedUserChoices.forEach(renderCategory);
 };
 
-const clearLS = function () {
-  const loadModal = `<div id="modal-div" class="modal is-active">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Are you sure??</p>
-      </header>
-      <section class="modal-card-body">
-      <p class="subtitle">Doing this will remove all the fun activities you've saved, are you sure you want to continue?</p>
-      </section>
-      <footer class="modal-card-foot">
-        
-        <button class="button is-success" id="confirm-delete">Confirm</button>
-        <button class="button is-danger" id="cancel-delete">Cancel</button>
-        
-      </footer>
+const renderNoActivitiesModal = function () {
+  const modal = `<div class="container" id="app">
+    <div id="modal-div" class="modal is-active">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+        <p class="title has-text-centered has-text-white">
+          You do not have any activities! &#128556; Go back to <a href="./index.html">the homepage</a>to become less boring!
+        </p>
+      </div>
     </div>
   </div>`;
-  modalContainer.append(loadModal);
-};
 
-const closeModal = function (event) {
-  const target = $(event.target);
-  // const currentTarget = $(event.currentTarget);
-  const modalDiv = $("#modal-div");
+  $("#clear-ls").remove();
 
-  if (target.is("#cancel-delete")) {
-    modalDiv.removeClass("is-active");
-  }
-
-  if (target.is("#confirm-delete")) {
-    localStorage.clear();
-    modalDiv.removeClass("is-active");
-    console.log("confirm");
-    window.location.reload();
-  }
-};
-
-modalContainer.on("click", closeModal);
-
-const renderNoActivitiesModal = function () {
-  if (localStorage.getItem("myActivities") === null) {
-    const modalMessage = `<div class="container" id="app">
-      <div id="modal-div" class="modal is-active">
-        <div class="modal-background"></div>
-        <div class="modal-content">
-          <p class="title has-text-centered has-text-white">
-            You do not have any activities! &#128556; Go back to <a href="./index.html">the homepage</a>to become less boring!
-          </p>
-        </div>
-      </div>
-      </div>`;
-    $("#clear-ls").remove();
-    modalContainer.append(modalMessage);
-  }
+  modalContainer.append(modal);
 };
 
 const deleteActivity = function (event) {
   const activityData = JSON.parse(localStorage.getItem("myActivities")) || {};
 
   const category = $(event.target).data("category");
-  const categoryData = activityData[category];
+  const categoryArray = activityData[category];
   const key = $(event.target).data("key");
-  const categoryArray = [];
 
-  categoryData.forEach((item) => {
-    if (key !== Number(item.key)) {
-      categoryArray.push(item);
-    }
+  const newCategoryArray = categoryArray.filter((item) => {
+    return item.key !== `${key}`;
   });
 
-  activityData[category] = categoryArray;
+  if (newCategoryArray.length === 0) {
+    // remove the key from object
+    delete activityData[category];
+  } else {
+    activityData[category] = newCategoryArray;
+  }
 
   localStorage.setItem("myActivities", JSON.stringify(activityData));
 
-  window.location.reload();
+  renderAllCards();
+};
+
+const renderAllCards = function () {
+  allCategoriesContainer.empty();
+  const userChoices = JSON.parse(localStorage.getItem("myActivities")) ?? {};
+  if (Object.keys(userChoices).length === 0) {
+    renderNoActivitiesModal();
+  } else {
+    constructUserChoices(userChoices);
+  }
 };
 
 const onReady = function () {
-  const userChoices = JSON.parse(localStorage.getItem("myActivities")) ?? {};
-  renderNoActivitiesModal();
-  constructUserChoices(userChoices);
-  $(".delete-btn").click(deleteActivity);
+  renderAllCards();
+  clearLocalStorageBtn.on("click", renderConfirmationModal);
 };
 
 $(document).ready(onReady);
-$("#clear-ls").click(clearLS);
