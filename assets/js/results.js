@@ -6,7 +6,7 @@ const query = "Manchester";
 const settings = {
   headers: {
     "x-rapidapi-host": "contextualwebsearch-websearch-v1.p.rapidapi.com",
-    "x-rapidapi-key": `"${API_KEY}""`,
+    "x-rapidapi-key": API_KEY,
   },
 };
 
