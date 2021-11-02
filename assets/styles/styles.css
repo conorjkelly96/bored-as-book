@@ -21,18 +21,53 @@ body {
   height: 100vh;
 }
 
-html {
-  background-image: url(/bored-as-book/assets/images/start-digital-4utnKVmVQR8-unsplash.jpg);
+#main-page {
+  background-image: url(../images/start-digital.jpg);
   background-size: 1000px;
+  background-attachment: fixed;
+  background-size: cover;                     
+  background-repeat: no-repeat;
+  background-position: center center;   
+
+}
+
+#about-us {
+  background-image: url(..//images/alexanderart.jpg);
+  background-size: 1000px;
+  background-attachment: fixed;
+  background-size: cover;                     
+  background-repeat: no-repeat;
+  background-position: center center;   
+    
+}
+
+#my-activities {
+  background-image: url(../images/bubblesplash.jpg);
+  background-size: 1000px;
+  background-attachment: fixed;
+  background-size: cover;                     
+  background-repeat: no-repeat;
+  background-position: center center;   
+
+}
+
+#search-results {
+  background-image: url(../images/alexanderart.jpg);
+  background-size: 1000px;
+  background-attachment: fixed;
+  background-size: cover;                     
+  background-repeat: no-repeat;
+  background-position: center center;   
+
+}
+
+.book-logo {
+  width: 25%;
+  height: auto;
 }
 
 main {
   min-height: 80vh;
-}
-
-.modal-background {
-  background-color: coral;
-  opacity: 0.75;
 }
 
 .logo {
@@ -65,14 +100,10 @@ main {
 }
 
 /* icon for activity buttons */
-.fas {
+.pay-icon {
   color: yellow;
   background-color: black;
   border-radius: 5px;
-}
-
-.activity-text {
-  margin-right: 30px;
 }
 
 .form-input {
@@ -156,6 +187,7 @@ main {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .title {
@@ -192,5 +224,10 @@ main {
 
   .form-container {
     flex-direction: column;
+  }
+
+  .book-logo {
+    width: 10%;
+    height: auto;
   }
 }

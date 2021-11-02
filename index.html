@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html id="main-page" lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -36,7 +36,7 @@
     <header>
       <nav class="navbar is-transparent">
         <div class="navbar-brand">
-          <h1 class="logo">Bored As Book</h1>
+          <img class="book-logo" src="assets/images/book logo.jpg" />
           <div class="navbar-burger" data-target="app-navbar">
             <span></span>
             <span></span>
@@ -61,9 +61,8 @@
 
       <!-- User Input here -->
 
-      <div id="card-container" class="card-container">
-        <div id="notification-container" class="notification-container"></div>
-      </div>
+      <div id="notification-container" class="notification-container"></div>
+      <div id="card-container" class="card-container"></div>
 
       <div class="choices-container" id="choices-container">
         <div class="buttons-container ml-3 mr-3">
@@ -71,43 +70,43 @@
             data-category="social"
             class="category-btn button is-large is-fullwidth"
           >
-            <span class="activity-text">Social</span>
-            <i class="fas fa-users"></i>
+            Social
+            <i data-category="social" class="fas fa-users ml-3"></i>
           </button>
           <button
             data-category="education"
             class="category-btn button is-large is-fullwidth"
           >
-            <span class="activity-text">Educational</span>
-            <i class="fas fa-book-reader"></i>
+            Educational
+            <i data-category="education" class="fas fa-book-reader ml-3"></i>
           </button>
           <button
             data-category="recreational"
             class="category-btn button is-large is-fullwidth"
           >
-            <span class="activity-text">Recreational</span>
-            <i class="fas fa-video"></i>
+            Recreational
+            <i data-category="recreational" class="fas fa-video ml-3"></i>
           </button>
           <button
             data-category="relaxation"
             class="category-btn button is-large is-fullwidth"
           >
-            <span class="activity-text">Relaxation</span>
-            <i class="fas fa-couch"></i>
+            Relaxation
+            <i data-category="relaxation" class="fas fa-couch ml-3"></i>
           </button>
           <button
             data-category="music"
             class="category-btn button is-large is-fullwidth"
           >
-            <span class="activity-text">Music</span>
-            <i class="fas fa-music"></i>
+            Music
+            <i data-category="music" class="fas fa-music ml-3"></i>
           </button>
           <button
             data-category="random"
             class="category-btn button is-large is-fullwidth"
           >
-            <span class="activity-text">Random</span>
-            <i class="fas fa-random"></i>
+            Random
+            <i data-category="random" class="fas fa-random ml-3"></i>
           </button>
         </div>
       </div>
