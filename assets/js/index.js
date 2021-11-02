@@ -106,7 +106,7 @@ const getPriceElement = function (price) {
   if (price > 0) {
     return `<div class="media-left">
       <div class="icon pay-icon">
-        <i class="fas fa-dollar-sign"></i>
+        <i class="fas fa-dollar-sign pay-icon"></i>
       </div>
     </div>`;
   }
