@@ -78,15 +78,17 @@ const constructUserChoices = function (userChoices) {
 
     parentContainer.append(categoryTitle);
     parentContainer.append(choicesContainer);
-
+    $(".delete-btn").click(deleteActivity);
     allCategoriesContainer.append(parentContainer);
   };
+
+  console.log(selectedUserChoices);
 
   selectedUserChoices.forEach(renderCategory);
 };
 
 const clearLS = function () {
-  const loadModal = `<div id="modal-div" class="modal is-active">
+  const loadModal = $(`<div id="modal-div" class="modal is-active">
     <div class="modal-background"></div>
     <div class="modal-card">
       <header class="modal-card-head">
@@ -102,7 +104,7 @@ const clearLS = function () {
         
       </footer>
     </div>
-  </div>`;
+  </div>`);
   modalContainer.append(loadModal);
 };
 
@@ -112,13 +114,13 @@ const closeModal = function (event) {
   const modalDiv = $("#modal-div");
 
   if (target.is("#cancel-delete")) {
+    console.log("cancel-delete");
     modalDiv.removeClass("is-active");
   }
 
   if (target.is("#confirm-delete")) {
     localStorage.clear();
     modalDiv.removeClass("is-active");
-    console.log("confirm");
     window.location.reload();
   }
 };
@@ -167,7 +169,6 @@ const onReady = function () {
   const userChoices = JSON.parse(localStorage.getItem("myActivities")) ?? {};
   renderNoActivitiesModal();
   constructUserChoices(userChoices);
-  $(".delete-btn").click(deleteActivity);
 };
 
 $(document).ready(onReady);
