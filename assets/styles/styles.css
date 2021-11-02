@@ -158,6 +158,19 @@ main {
   flex-wrap: wrap;
 }
 
+.title {
+  text-align: center;
+}
+
+.team-description {
+  padding-inline-start: 20px;
+}
+
+.button-linkedin {
+  color: blue;
+  <a href="https://www.linkedin.com/in/andrada-gacichevici-2801a51a5/" class="btn btn-info">LinkedIN</a>
+}
+
 /* For Mobile View Ports */
 @media only screen and (max-width: 768px) {
   #search-list {
