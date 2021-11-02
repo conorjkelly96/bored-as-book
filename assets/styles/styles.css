@@ -26,6 +26,11 @@ html {
   background-size: 1000px;
 }
 
+.book-logo {
+  width: 25%;
+  height: auto;
+}
+
 main {
   min-height: 80vh;
 }
