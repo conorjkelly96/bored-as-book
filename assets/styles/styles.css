@@ -70,11 +70,6 @@ main {
   min-height: 80vh;
 }
 
-.modal-background {
-  background-color: coral;
-  opacity: 0.75;
-}
-
 .logo {
   align-items: center;
   justify-content: center;
@@ -109,10 +104,6 @@ main {
   color: yellow;
   background-color: black;
   border-radius: 5px;
-}
-
-.activity-text {
-  margin-right: 30px;
 }
 
 .form-input {
@@ -196,6 +187,7 @@ main {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* For Mobile View Ports */
