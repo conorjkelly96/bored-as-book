@@ -61,7 +61,10 @@ const constructUserChoices = function (userChoices) {
             <button class="card-footer-item button is-info m-1">
               View
             </button>
-            <button class="card-footer-item button is-danger m-1">
+            <button class="card-footer-item button is-danger m-1 delete-btn"
+            data-key="${choice.key}"
+             data-category ="${category}"
+             >
               Delete
             </button>
           </footer>
@@ -82,13 +85,17 @@ const constructUserChoices = function (userChoices) {
   selectedUserChoices.forEach(renderCategory);
 };
 
-const clearLS = function () {
-  alert(
-    "Doing this will remove all the fun activities you've saved, are you sure you want to continue?"
-  );
-  localStorage.clear();
-  window.location.reload();
-};
+// const clearLS = function () {
+//   // alert(
+//   //   "Doing this will remove all the fun activities you've saved, are you sure you want to continue?"
+//   // );
+
+//   const answer = prompt("Do you want to remove all activities? yes/no ");
+//   if (answer.toLocaleLowerCase() === "yes") {
+
+//   localStorage.clear();
+//   window.location.reload();
+// };
 
 const renderNoActivitiesModal = function () {
   if (localStorage.getItem("myActivities") === null) {
@@ -107,10 +114,39 @@ const renderNoActivitiesModal = function () {
   }
 };
 
+const deleteActivity = function (event) {
+  const activityData = JSON.parse(localStorage.getItem("myActivities")) || {};
+  console.log(activityData);
+  const category = $(event.target).data("category");
+  const categoryData = activityData[category];
+  const key = $(event.target).data("key");
+  const categoryArray = [];
+
+  categoryData.forEach((item) => {
+    console.log(key, Number(item.key));
+    if (key !== Number(item.key)) {
+      categoryArray.push(item);
+    }
+  });
+
+  activityData[category] = categoryArray;
+
+  console.log(activityData);
+
+  localStorage.setItem("myActivities", JSON.stringify(activityData));
+
+  window.location.reload();
+
+  console.log($(event.target).data("key"));
+
+  console.log($(event.target).data("category"));
+};
+
 const onReady = function () {
   const userChoices = JSON.parse(localStorage.getItem("myActivities")) ?? {};
   renderNoActivitiesModal();
   constructUserChoices(userChoices);
+  $(".delete-btn").click(deleteActivity);
 };
 
 $(document).ready(onReady);
