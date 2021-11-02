@@ -60,6 +60,17 @@ main {
   color: var(--flickr-pink);
 }
 
+/* icon for activity buttons */
+.fas {
+  color: yellow;
+  background-color: black;
+  border-radius: 5px;
+}
+
+.activity-text {
+  margin-right: 30px;
+}
+
 .form-input {
   width: 264px;
 }
