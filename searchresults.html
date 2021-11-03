@@ -44,39 +44,10 @@
     </header>
 
     <main>
-      <!-- Search Input Section -->
-      <div class="column is-12 input-parent-container">
-        <!-- Column for search history -->
-        <div class="input-container">
-          <div class="field column is-one-third input-div">
-            <p class="label has-text-white">Your Activities:</p>
-            <div class="control has-icons-left">
-              <input
-                size="5"
-                class="input"
-                type="text"
-                placeholder="Where next?"
-              />
-              <span class="icon is-small is-left">
-                <i class="fas fa-globe"></i>
-              </span>
-            </div>
-          </div>
-
-          <div class="field is-grouped">
-            <div class="control">
-              <button type="submit" class="button is-link">Search</button>
-            </div>
-            <div class="control">
-              <button class="button is-link is-danger">Cancel</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <hr />
-
       <!-- Search Tiles after user executes a search query -->
+      <h1 class="title has-text-white">
+        Your Search Results - <span id="search-result"></span>
+      </h1>
       <div class="tile-container">
         <div
           class="tile is-parent is-vertical is-10"

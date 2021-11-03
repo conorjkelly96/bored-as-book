@@ -57,6 +57,7 @@ const handleActivitySelection = async (activity) => {
 
 const onReady = function () {
   const activity = readParametersFromUrl();
+  $("#search-result").text(activity);
   handleActivitySelection(activity);
 };
 
