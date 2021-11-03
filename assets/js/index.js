@@ -136,11 +136,10 @@ const renderNewJoke = async function () {
   // constructingJokeCard for every time a joke loads
   const constructJokeCard = function (joke) {
     const jokeCard = `<div class="card mt-6">
-    <header class="card-header has-text-centre">
-    <p class="card-header-title"> Bored O'Clock:<span class="card-header-title" id="clock">
+    <header class="card-header is-justify-content-center p-3 subtitle has-text-weight-semibold">
+    <p>Bored O'Clock:<span class="ml-2" id="clock">
     </span>
     </p>
-    
     </header>
     <div class="card-content">
     <div class="content">
