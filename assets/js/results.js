@@ -13,11 +13,8 @@ const settings = {
 // CK: the response has been tested with the const query variable
 const fetchDataFromApi = async function (url, settings = {}) {
   try {
-    console.log(url);
     const response = await fetch(url, settings);
-    console.log(response);
     const data = await response.json();
-    console.log(data);
     return data;
   } catch (error) {
     console.log(error);
@@ -50,7 +47,9 @@ const readParametersFromUrl = function () {
 };
 
 const handleActivitySelection = async (activity) => {
-  const url = `${BASE_URL}/api/Search/WebSearchAPI?q=${activity}&pageNumber=1&pageSize=10&autoCorrect=true&safeSearch=true`;
+  const url = `${BASE_URL}/api/Search/WebSearchAPI?q=${encodeURIComponent(
+    activity
+  )}&pageNumber=1&pageSize=10&autoCorrect=true&safeSearch=true`;
   const searchResults = await fetchDataFromApi(url, settings);
   const suggestedActivity = searchResults || [];
   // construct activity card here with the response
