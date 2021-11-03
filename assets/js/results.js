@@ -40,17 +40,24 @@ const constructSearchActivity = function (results) {
   results.forEach(constructSearchResults);
 };
 
-const handleActivitySelection = async () => {
-  const url = `${BASE_URL}/api/Search/WebSearchAPI?q=Manchester&pageNumber=1&pageSize=10&autoCorrect=true&safeSearch=true`;
+const readParametersFromUrl = function () {
+  const params = new URLSearchParams(document.location.search.substring(1));
+  const activity = params.get("activity");
+
+  return activity;
+};
+
+const handleActivitySelection = async (activity) => {
+  const url = `${BASE_URL}/api/Search/WebSearchAPI?q=${activity}&pageNumber=1&pageSize=10&autoCorrect=true&safeSearch=true`;
   const searchResults = await fetchDataFromApi(url, settings);
-  console.log(searchResults);
   const suggestedActivity = searchResults || [];
   // construct activity card here with the response
   constructSearchActivity(suggestedActivity.value);
 };
 
 const onReady = function () {
-  handleActivitySelection();
+  const activity = readParametersFromUrl();
+  handleActivitySelection(activity);
 };
 
 $(document).ready(onReady);

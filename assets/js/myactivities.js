@@ -97,7 +97,9 @@ const constructUserChoices = function (userChoices) {
             )}</div>
           </div>
           <footer class="card-footer pt-4">
-            <button class="card-footer-item button is-info m-1">
+            <button data-string="${
+              choice.activity
+            }" name="view-btn" class="card-footer-item button is-info m-1">
               View
             </button>
             <button class="card-footer-item button is-danger m-1 delete-btn" data-key="${
@@ -121,6 +123,9 @@ const constructUserChoices = function (userChoices) {
   };
 
   selectedUserChoices.forEach(renderCategory);
+
+  const viewBtn = $('button[name="view-btn"]');
+  viewBtn.on("click", navigateToSearchPage);
 };
 
 const renderNoActivitiesModal = function () {
@@ -171,6 +176,13 @@ const renderAllCards = function () {
   } else {
     constructUserChoices(userChoices);
   }
+};
+
+const navigateToSearchPage = function (event) {
+  const target = $(event.target);
+
+  const activity = target.data("string");
+  window.location.assign(`./searchresults.html?activity=${activity}`);
 };
 
 const onReady = function () {
