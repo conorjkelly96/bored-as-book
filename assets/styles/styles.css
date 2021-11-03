@@ -10,6 +10,11 @@
   --ultramarine-blue: #4361eeff;
   --dodger-blue: #4895efff;
   --vivid-sky-blue: #4cc9f0ff;
+  --background-overlay: linear-gradient(
+    to top,
+    rgb(20, 20, 20, 0.7),
+    rgba(133, 133, 133, 0.2)
+  );
 }
 
 * {
@@ -22,43 +27,39 @@ body {
 }
 
 #main-page {
-  background-image: url(../images/start-digital.jpg);
+  background-image: var(--background-overlay), url(../images/start-digital.jpg);
   background-size: 1000px;
   background-attachment: fixed;
-  background-size: cover;                     
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;   
-
+  background-position: center center;
 }
 
 #about-us {
-  background-image: url(..//images/alexanderart.jpg);
+  background-image: var(--background-overlay), url(..//images/alexanderart.jpg);
   background-size: 1000px;
   background-attachment: fixed;
-  background-size: cover;                     
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;   
-    
+  background-position: center center;
 }
 
 #my-activities {
-  background-image: url(../images/bubblesplash.jpg);
+  background-image: var(--background-overlay), url(../images/bubblesplash.jpg);
   background-size: 1000px;
   background-attachment: fixed;
-  background-size: cover;                     
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;   
-
+  background-position: center center;
 }
 
 #search-results {
-  background-image: url(../images/alexanderart.jpg);
+  background-image: var(--background-overlay), url(../images/alexanderart.jpg);
   background-size: 1000px;
   background-attachment: fixed;
-  background-size: cover;                     
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;   
-
+  background-position: center center;
 }
 
 .book-logo {
