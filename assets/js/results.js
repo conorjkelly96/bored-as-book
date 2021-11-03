@@ -32,7 +32,7 @@ const constructSearchActivity = function (results) {
     <p>
     ${result.description}
     </p>
-    <a>${result.url}</a>
+    <a target="_blank" href=${result.url}>View</a>
     </div>`;
     searchParent.append(searchResult);
   };
