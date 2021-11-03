@@ -90,6 +90,24 @@ main {
   margin: 20px auto;
 }
 
+.no-border {
+  border: none;
+}
+
+.alert {
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+}
+
+.alert-success {
+  background-color: rgba(0, 209, 178, 0.6);
+}
+
+.alert-danger {
+  background-color: rgba(241, 70, 104, 0.6);
+}
+
 .category-btn {
   margin-top: 10px;
   background-color: coral;
@@ -158,6 +176,7 @@ main {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  align-items: flex-start;
 }
 
 .card-content {
@@ -169,8 +188,12 @@ main {
   text-align: center;
 }
 
+.category-background {
+  background-color: rgba(0, 209, 178, 0.6);
+}
+
 .activity-card {
-  width: 16rem;
+  width: 20rem;
   margin: 20px;
 }
 
@@ -182,13 +205,6 @@ main {
 
 .logo-container {
   text-align: center;
-}
-
-.notification-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
 /* For Mobile View Ports */

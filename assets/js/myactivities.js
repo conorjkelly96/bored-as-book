@@ -11,7 +11,7 @@ const allCategoriesContainer = $("#all-categories");
 const clearLocalStorageBtn = $("#clear-ls");
 
 const constructCategoryTitle = function (category) {
-  return $(`<div class="card-category">
+  return $(`<div class="card-category category-background">
     <h2 class="title has-text-white">${categoryMapper[category]}</h2>
   </div>`);
 };
@@ -99,10 +99,10 @@ const constructUserChoices = function (userChoices) {
           <footer class="card-footer pt-4">
             <button data-string="${
               choice.activity
-            }" name="view-btn" class="card-footer-item button is-info m-1">
+            }" name="view-btn" class="card-footer-item button is-info m-1 has-text-weight-semibold">
               View
             </button>
-            <button class="card-footer-item button is-danger m-1 delete-btn" data-key="${
+            <button class="card-footer-item button is-danger m-1 delete-btn has-text-weight-semibold" data-key="${
               choice.key
             }" data-category ="${category}">
               Delete

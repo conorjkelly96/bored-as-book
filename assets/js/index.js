@@ -168,12 +168,12 @@ const constructActivityCard = function (activity) {
       </div>
     </div>
     <footer class="card-footer pt-4">
-    <button data-choice="no" id="no-btn" class="card-footer-item button is-danger" data-category=${
+    <button data-choice="no" id="no-btn" class="card-footer-item button is-danger mx-2" data-category=${
       activity.type
     }>
       No
     </button>
-    <button data-choice="yes" id="yes-btn" class="card-footer-item button is-success" data-category=${
+    <button data-choice="yes" id="yes-btn" class="card-footer-item button is-success mx-2" data-category=${
       activity.type
     }>
       Yes
@@ -188,11 +188,11 @@ const constructActivityCard = function (activity) {
 
 // Rendering alert depending on user choice
 const renderAlert = function (decision) {
-  const yesAlert = `<div class="notification is-primary m-3">
+  const yesAlert = `<div class="notification m-3 alert alert-success">
   Hey! Look who's not boring now!
   </div>`;
 
-  const noAlert = `<div class="notification is-danger m-3">
+  const noAlert = `<div class="notification m-3 alert alert-danger">
   You're seriously boring...
   </div>`;
 

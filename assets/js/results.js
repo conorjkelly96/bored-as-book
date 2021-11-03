@@ -28,11 +28,13 @@ const constructSearchActivity = function (results) {
   const searchParent = $("#search-container");
   const constructSearchResults = function (result) {
     const searchResult = `<div class="tile is-child box">
-    <p class="title">${result.title}</p>
-    <p>
-    ${result.description}
-    </p>
-    <a target="_blank" href=${result.url}>View</a>
+    <p class="title has-text-centered">${result.title}</p>
+    <hr />
+    <p>${result.description}</p>
+    <hr />
+    <div class="has-text-centered my-2">
+    <a class="button is-success is-light" target="_blank" href=${result.url}>More Details</a>
+    </div>
     </div>`;
     searchParent.append(searchResult);
   };
