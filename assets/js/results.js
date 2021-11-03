@@ -28,11 +28,13 @@ const constructSearchActivity = function (results) {
   const searchParent = $("#search-container");
   const constructSearchResults = function (result) {
     const searchResult = `<div class="tile is-child box">
-    <p class="title">${result.title}</p>
-    <p>
-    ${result.description}
-    </p>
-    <a>${result.url}</a>
+    <p class="title has-text-centered">${result.title}</p>
+    <hr />
+    <p>${result.description}</p>
+    <hr />
+    <div class="has-text-centered my-2">
+    <a class="button is-success is-light" target="_blank" href=${result.url}>More Details</a>
+    </div>
     </div>`;
     searchParent.append(searchResult);
   };
@@ -40,17 +42,25 @@ const constructSearchActivity = function (results) {
   results.forEach(constructSearchResults);
 };
 
-const handleActivitySelection = async () => {
-  const url = `${BASE_URL}/api/Search/WebSearchAPI?q=Manchester&pageNumber=1&pageSize=10&autoCorrect=true&safeSearch=true`;
+const readParametersFromUrl = function () {
+  const params = new URLSearchParams(document.location.search.substring(1));
+  const activity = params.get("activity");
+
+  return activity;
+};
+
+const handleActivitySelection = async (activity) => {
+  const url = `${BASE_URL}/api/Search/WebSearchAPI?q=${activity}&pageNumber=1&pageSize=10&autoCorrect=true&safeSearch=true`;
   const searchResults = await fetchDataFromApi(url, settings);
-  console.log(searchResults);
   const suggestedActivity = searchResults || [];
   // construct activity card here with the response
   constructSearchActivity(suggestedActivity.value);
 };
 
 const onReady = function () {
-  handleActivitySelection();
+  const activity = readParametersFromUrl();
+  $("#search-result").text(activity);
+  handleActivitySelection(activity);
 };
 
 $(document).ready(onReady);
