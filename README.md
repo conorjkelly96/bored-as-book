@@ -23,6 +23,10 @@
   - [Mobile my activities page](#mobile-my-activities-page)
   - [Mobile selected activities](#mobile-selected-activities)
 
+## Project Link
+
+Click [here] (https://github.com/conorjkelly96/bored-as-book) to view the project on Github pages.
+
 ## Getting Started
 
 - Clone the Github Project into your local machine
