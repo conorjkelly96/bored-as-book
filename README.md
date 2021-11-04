@@ -75,6 +75,10 @@ WHEN I visit the home page, a random joke is shown on the screen.
 
 ### Wireframes
 
+<img src="./assets/images/aboutus.html.png">
+<img src="assets/images/index.html.boredasbook.png">
+<img src="assets/images/myactivities.html.png">
+
 ## Plans For Improvement
 
 - Add loading modals to indicate that API call is being made
