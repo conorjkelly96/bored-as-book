@@ -66,16 +66,16 @@ We used three different APIs to get the required data for this project
 
 ### User Flow
 
-AS a user
-I want to select a category
-SO that a random activity is generated
-IF I select yes
-THEN the activity is saved in my activities
-WHEN in my activities
-I have the option to select remove activity from results
-WHEN selecting a specific result
-THEN a selection of relevant search results are shown
-WHEN I visit the home page, a random joke is shown on the screen.
+- AS a user
+- I want to select a category
+- SO that a random activity is generated
+- IF I select yes
+- THEN the activity is saved in my activities
+- WHEN in my activities
+- I have the option to select remove activity from results
+- WHEN selecting a specific result
+- THEN a selection of relevant search results are shown
+- WHEN I visit the home page, a random joke is shown on the screen.
 
 ### Wireframes
 
