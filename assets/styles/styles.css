@@ -207,6 +207,8 @@ main {
   text-align: center;
 }
 
+/* CSS Styling for the Cards on About Us page */
+
 .title {
   text-align: center;
   color: white;
@@ -218,6 +220,13 @@ main {
 
 .button-linkedin {
   color: blue;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  display: grid;
 }
 
 /* For Mobile View Ports */
