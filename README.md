@@ -42,11 +42,11 @@ code .
 
 ## Contributors
 
-- Andrada Gacichevici:
-- Conor Kelly:
-- Matt Palmer:
-- Yashemabeth:
-- Sumaia Sorna:
+- [Andrada Gacichevici](https://github.com/andradag)
+- [Conor Kelly](https://github.com/conorjkelly96)
+- [Matt Palmer](https://github.com/tigerbath)
+- [Yashemabeth](https://github.com/Yashemabeth)
+- [Sumaia Sorna](https://github.com/SumaiaSorna)
 
 ## About The Project
 
@@ -92,22 +92,22 @@ We used three different APIs to get the required data for this project
 ## Screenshots
 
 - Desktop index page with modal
-  ![image]()
+  <img src="./assets/images/screenshots/Bored As Book! _.png">
 - Desktop index page with categories
-  ![image]()
+  <img src="./assets/images/screenshots/Bored As Book! _ (1).png">
 - Desktop index page with a randomly generated activity card
-  ![image]()
+  <img src="assets/images/screenshots/Bored As Book! _ (2).png">
 - Desktop my activities page
-  ![image]()
+  <img src="assets/images/screenshots/My Activities.png">
 - Desktop selected activity search results page
-  ![image]()
+  <img src="assets/images/screenshots/My Activities (1).png">
 - Mobile index page with modal
-  ![image]()
+  <img src="assets/images/screenshots/Bored As Book! _ (5).png">
 - Mobile index page with categories
-  ![image]()
+  <img src="assets/images/screenshots/Bored As Book! _ (3).png">
 - Mobile index page with a randomly generated activity card
-  ![image]()
+  <img src="assets/images/screenshots/Bored As Book! _ (6).png">
 - Mobile my activities page
-  ![image]()
-- Mobile selected activities
-  ![image]()
+  <img src="assets/images/screenshots/My Activities (2).png">
+- Mobile selected activities search results
+  <img src="assets/images/screenshots/My Activities (3).png">
