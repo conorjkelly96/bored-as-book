@@ -25,7 +25,7 @@
 
 ## Project Link
 
-Click [here](https://github.com/conorjkelly96/bored-as-book) to view the project on Github pages.
+Click [here](https://sumaiasorna.github.io/bored-as-book/) to view the project on Github pages.
 
 ## Getting Started
 
