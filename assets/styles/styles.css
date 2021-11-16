@@ -207,6 +207,28 @@ main {
   text-align: center;
 }
 
+/* CSS Styling for the Cards on About Us page */
+
+.title {
+  text-align: center;
+  color: white;
+}
+
+.team-description {
+  padding-inline-start: 20px;
+}
+
+.button-linkedin {
+  color: blue;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  display: grid;
+}
+
 /* For Mobile View Ports */
 @media only screen and (max-width: 768px) {
   #search-list {
